@@ -1,0 +1,1 @@
+<div class="w-full mt-1 mb-1 border-t border-slate-900/5 dark:border-slate-50/5"></div>
