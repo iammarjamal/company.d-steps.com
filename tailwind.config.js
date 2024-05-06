@@ -7,35 +7,39 @@ module.exports = {
     "./resources/**/*.blade.php",
     "./resources/**/*.js",
     "./resources/**/*.vue",
+    "./resources/**/*.jsx",
   ],
 
   theme: {
 
     // Screens
     screens: {
-      phone: "320px",
+      sm: "320px",
       // => @media (min-width: 640px) { ... }
 
-      tab: "768px",
+      md: "768px",
       // => @media (min-width: 768px) { ... }
 
-      laptop: "1024px",
+      lg: "1024px",
       // => @media (min-width: 1024px) { ... }
 
-      desktop: "1366px",
+      xl: "1366px",
       // => @media (min-width: 1280px) { ... }
     },
 
     // Extend
     extend: {
+      
       // Colors
       colors: {
-        primary: colors.indigo,
+        primary: colors.blue,
         secondary: colors.gray,
+
         success: colors.emerald,
         danger: colors.red,
         warning: colors.amber,
         info: colors.blue,
+
         white: colors.white,
         black: colors.black
       },

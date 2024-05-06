@@ -3,29 +3,27 @@
 namespace App\Http\Controllers\General;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class LanguageController extends Controller
 {
     public function index($lang)
     {
-        if (! in_array($lang, ['ar', 'en'])) {
+        // Check if the requested language is supported
+        if (!in_array($lang, ['ar', 'en'])) {
             abort(404);
         }
+
+        // Store the selected language in the session
         session()->put('locale', $lang);
+session()->save();
+
+        // Set the application locale to the selected language
         App::setLocale($lang);
 
-        if(Auth::check()){
-            User::where('id', Auth::user()->id)->update([
-                'language' => $lang,
-                'updated_at' => Carbon::now()
-            ]);
-        }
-
-        return back();
+        // Redirect back to the previous page
+        return redirect()->back();
     }
 }

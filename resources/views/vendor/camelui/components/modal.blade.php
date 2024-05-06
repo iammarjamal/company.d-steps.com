@@ -22,7 +22,7 @@
             x-transition:leave-end="opacity-0"
         >
             <div
-                class="{{ $class }} flex-col flex min-3-xl pb-2 phone:!border-t-1 phone:!border-0 phone:!bottom-0 tab:!border-t-1 tab:!border-0 tab:!bottom-0 shadow dark:shadow-zinc-800 overflow-y-scroll no-scrollbar dark:bg-zinc-800 border-zinc-300 dark:border-zinc-600 phone:fixed tab:fixed laptop:relative desktop:relative ease-in-out z-50 p-2 bg-zinc-50 border cursor-auto phone:p-4 tab:p-6 laptop:p-8 desktop:p-10 rounded-2xl phone:!rounded-b-none phone:!rounded-t-3xl tab:!rounded-t-3xl tab:!rounded-b-none laptop:!rounded-2xl desktop:!rounded-2xl phone:max-h-[96%] tab:max-h-[96%] laptop:max-h-[94%] desktop:max-h-[94%] phone:w-full tab:w-full laptop:w-1/2 desktop:w-1/3 max-w-7xl"
+                class="{{ $class }} flex-col flex min-3-xl pb-2 sm:!border-t-1 sm:!border-0 sm:!bottom-0 md:!border-t-1 md:!border-0 md:!bottom-0 shadow dark:shadow-zinc-800 overflow-y-scroll no-scrollbar dark:bg-zinc-800 border-zinc-300 dark:border-zinc-600 sm:fixed md:fixed lg:relative xl:relative ease-in-out z-50 p-2 bg-zinc-50 border cursor-auto sm:p-4 md:p-6 lg:p-8 xl:p-10 rounded-2xl sm:!rounded-b-none sm:!rounded-t-3xl md:!rounded-t-3xl md:!rounded-b-none lg:!rounded-2xl xl:!rounded-2xl sm:max-h-[96%] md:max-h-[96%] lg:max-h-[94%] xl:max-h-[94%] sm:w-full md:w-full lg:w-1/2 xl:w-1/3 max-w-7xl"
                 :class="{{$wire}} ? 'animate__animated animate__fadeInUp animate__faster' : 'animate__animated animate__fadeOutDown animate__faster'"
                 @if(empty($required))
                 @click.outside="if(isDelayedClose){ {{$wire}} = false; isDelayedClose = false; }"

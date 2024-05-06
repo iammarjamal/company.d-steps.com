@@ -1,6 +1,5 @@
 <?php
 
-// Uses
 use App\Http\Controllers\General\LanguageController;
 use Illuminate\Support\Facades\Route;
 
