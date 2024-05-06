@@ -1,7 +1,7 @@
 <div>
     <!-- Body -->
     <div>
-        <x-camelui::card class="p-4" rounded="2xl">
+        <x-camelui::card class="sm:p-3 md:p-5 lg:p-6 xl:p-8" rounded="2xl">
             <form wire:submit="register">
                 <div class="relative w-full mb-3">
                     <x-camelui::input label="{{ trans('app.user.name') }}" type="text" placeholder="{{ trans('app.user.name') }}" wire="username" icon="fa-solid fa-user" required="true" />

@@ -1,7 +1,7 @@
 <div>
     <!-- Body -->
-    <form wire:submit="forgotPassword" rounded="2xl">
-        <x-camelui::card class="p-6">
+    <form wire:submit="forgotPassword">
+        <x-camelui::card class="sm:p-3 md:p-5 lg:p-6 xl:p-8" rounded="2xl">
             <div class="relative w-full mb-3">
                 <x-camelui::input label="{{ trans('app.user.email') }}" type="email" placeholder="{{ trans('app.user.email') }}" wire="email" icon="fa-solid fa-envelope" required="true" />
             </div>

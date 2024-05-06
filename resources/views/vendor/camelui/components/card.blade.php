@@ -38,7 +38,7 @@
   {{ $rounded == '2xl' ? 'rounded-2xl' : null }}
   {{ $rounded == '3xl' ? 'rounded-3xl' : null }}
   {{ $rounded == 'full' ? 'rounded-full' : null }}
-  shadow sm:p-2 md:p-4 lg:p-6 xl:p-8
+  shadow
   "
   >
   {{ $slot }}
