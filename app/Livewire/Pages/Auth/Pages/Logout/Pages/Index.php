@@ -7,9 +7,11 @@ use Livewire\Component;
 
 class Index extends Component
 {
-    public function render()
+    public function logout()
     {
-        Auth::logout();   
+        Auth::logout();
+        session()->invalidate();
+        session()->regenerateToken();
         return redirect()->route('auth.login');
     }
 }
