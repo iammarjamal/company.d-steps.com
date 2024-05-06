@@ -26,7 +26,7 @@ class Index extends Component
 
         // Create User
         $user = User::create([
-            'username' => $this->name,
+            'username' => $this->username,
             'email' => $this->email,
             'password' => Hash::make($this->password),
 

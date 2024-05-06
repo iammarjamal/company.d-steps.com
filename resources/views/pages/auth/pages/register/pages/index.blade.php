@@ -4,7 +4,7 @@
         <x-camelui::card class="p-4" rounded="2xl">
             <form wire:submit="register">
                 <div class="relative w-full mb-3">
-                    <x-camelui::input label="{{ trans('app.user.name') }}" type="text" placeholder="{{ trans('app.user.name') }}" wire="name" icon="fa-solid fa-user" required="true" />
+                    <x-camelui::input label="{{ trans('app.user.name') }}" type="text" placeholder="{{ trans('app.user.name') }}" wire="username" icon="fa-solid fa-user" required="true" />
                 </div>
                 <div class="relative w-full mb-3">
                     <x-camelui::input label="{{ trans('app.user.email') }}" type="email" placeholder="{{ trans('app.user.email') }}" wire="email" icon="fa-solid fa-envelope" required="true" />
