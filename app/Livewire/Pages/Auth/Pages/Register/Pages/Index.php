@@ -30,6 +30,9 @@ class Index extends Component
             'email' => $this->email,
             'password' => Hash::make($this->password),
 
+            // Role
+            'role' => 'user',
+
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ]);
