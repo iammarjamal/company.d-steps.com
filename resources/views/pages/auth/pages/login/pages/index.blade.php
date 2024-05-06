@@ -35,9 +35,9 @@
     <!-- Register -->
     <div class="justify-center w-full mt-3 text-center">
         <span class="text-sm text-gray-400">
-            {{ trans('app.auth.login.register.body') }}
+            {{ trans('app.auth.login.page.register.title') }}
             <a href="{{ route('auth.register') }}" wire:navigate>
-                <span class="underline">{{ trans('app.auth.login.register.btn') }}</span>
+                <span class="underline">{{ trans('app.auth.login.page.register.btn') }}</span>
             </a>
         </span>
     </div>

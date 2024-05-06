@@ -47,6 +47,6 @@ class Index extends Component
     {
         return view('pages.auth.pages.forget-password.pages.index')
         ->layout('pages.auth.layouts.layout') 
-        ->title(trans('app.auth.login.title'));
+        ->title(trans('app.auth.forget.password.title'));
     }
 }

@@ -8,7 +8,7 @@ return [
     'LightMode' => 'المضيء',
     'DefaultMode' => 'الإفتراضي',
     'DarkMode' => 'الداكن',
-    
+
     'personal.info' => 'المعلومات الشخصية',
     'user.avatar' => 'الصورة الشخصية',
     'user.name' => 'الاسم',
@@ -50,7 +50,7 @@ return [
     'home.index.page.footer.other' => 'اخرى',
     'home.index.page.footer.other.privacy' => 'سياسية الخصوصية',
     'home.index.page.footer.other.tos' => 'اتفاقية الخدمة',
-    
+
     'home.about.title' => 'مــن نحن',
     'home.about.page.my.name' => 'عمار جمال خالد',
     'home.about.page.my.work' => 'طَبيب، ومُطور تطبيقات (مبرمج)',
@@ -59,6 +59,26 @@ return [
 
     'home.branches.title' => 'الفــــروع',
 
+    /* Auth Pages */
+
+    // Login Page
     'auth.login.title' => 'تسجيل الدخول',
-    'auth.login.page.forget-password' => 'نسيت كلمة المرور'
+    'auth.login.page.forget-password' => 'نسيت كلمة المرور',
+    'auth.login.page.register.title' => 'ليس لديك حساب بالفعل ؟',
+    'auth.login.page.register.btn' => 'انشاء حساب جديد',
+
+    // Register Page
+    'auth.register.title' => 'انشاء حساب جديد',
+    'auth.register.page.login.title' => 'هل لديك حساب بالفعل ؟',
+    'auth.register.page.login.btn' => 'تسجيل الدخول',
+
+    // Forget Password Page
+    'auth.forget.password.title' => 'نسيت كلمة المرور',
+    'auth.forget.password.page.login.title' => 'العودة الى الصفحة السابقة ؟',
+    'auth.forget.password.page.login.btn' => 'تسجيل الدخول',
+
+    // Reset Password Page
+    'auth.reset.password.title' => 'استعادة كلمة المرور',
+
+
 ];
