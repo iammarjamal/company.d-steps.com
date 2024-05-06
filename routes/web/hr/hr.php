@@ -1,10 +1,8 @@
 <?php
 
+use App\Livewire\Pages\Hr\Pages\Index\Pages\Index as HRIndex;
 use Illuminate\Support\Facades\Route;
 
-// Route::name('home.')->group(function(){
-//     Route::get('/', HomeIndex::class)->name('index');
-//     Route::get('/about', AboutIndex::class)->name('about');
-//     Route::get('/projects', Projects::class)->name('projects');
-//     Route::get('/blog', BlogIndex::class)->name('blog');
-// });
+Route::prefix('hr')->name('hr.')->middleware('auth')->group(function(){
+    Route::get('/', HRIndex::class)->name('index');
+});

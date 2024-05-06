@@ -1,10 +1,8 @@
 <?php
 
+use App\Livewire\Pages\Admin\Pages\Index\Pages\Index as AdminIndex;
 use Illuminate\Support\Facades\Route;
 
-// Route::name('home.')->group(function(){
-//     Route::get('/', HomeIndex::class)->name('index');
-//     Route::get('/about', AboutIndex::class)->name('about');
-//     Route::get('/projects', Projects::class)->name('projects');
-//     Route::get('/blog', BlogIndex::class)->name('blog');
-// });
+Route::prefix('admin')->name('admin.')->middleware('auth')->group(function(){
+    Route::get('/', AdminIndex::class)->name('index');
+});

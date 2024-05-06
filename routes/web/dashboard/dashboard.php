@@ -1,10 +1,8 @@
 <?php
 
+use App\Livewire\Pages\Dashboard\Pages\Index\Pages\Index as DashboardIndex;
 use Illuminate\Support\Facades\Route;
 
-// Route::name('home.')->group(function(){
-//     Route::get('/', HomeIndex::class)->name('index');
-//     Route::get('/about', AboutIndex::class)->name('about');
-//     Route::get('/projects', Projects::class)->name('projects');
-//     Route::get('/blog', BlogIndex::class)->name('blog');
-// });
+Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(function(){
+    Route::get('/', DashboardIndex::class)->name('index');
+});
