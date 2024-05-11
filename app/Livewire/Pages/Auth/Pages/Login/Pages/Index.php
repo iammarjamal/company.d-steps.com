@@ -41,7 +41,7 @@ class Index extends Component
     public function render()
     {
         return view('pages.auth.pages.login.pages.index')
-        ->layout('pages.auth.layouts.layout') 
+        ->layout('pages.auth.layouts.layout')
         ->title(trans('app.auth.login.title'));
     }
 }

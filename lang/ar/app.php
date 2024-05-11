@@ -1,9 +1,11 @@
 <?php
 return [
+    // Config
     'lang' => 'ar',
     'dir' => 'rtl',
     'name' => 'D-Steps',
-
+    // Config
+    
     // Elements
     'LightMode' => 'المضيء',
     'DefaultMode' => 'الإفتراضي',
@@ -79,6 +81,15 @@ return [
 
     // Reset Password Page
     'auth.reset.password.title' => 'استعادة كلمة المرور',
+    
+    /* Auth Pages */
+
+    /* Dashboard Pages */
+
+    // Dashboard Page
+    'dashboard.index.title' => 'الرئيسية',
+
+    // Dashboard Page
 
 
 ];

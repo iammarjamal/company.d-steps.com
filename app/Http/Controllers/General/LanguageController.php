@@ -18,7 +18,7 @@ class LanguageController extends Controller
 
         // Store the selected language in the session
         session()->put('locale', $lang);
-session()->save();
+        session()->save();
 
         // Set the application locale to the selected language
         App::setLocale($lang);
