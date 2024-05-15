@@ -1,3 +1,6 @@
 <div>
-    {{-- A good traveler has no fixed plans and is not intent upon arriving. --}}
+    <div class="bg-zinc-50 dark:bg-zinc-900">
+        
+        
+    </div>
 </div>

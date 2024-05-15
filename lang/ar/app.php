@@ -88,6 +88,8 @@ return [
 
     // Dashboard Page
     'dashboard.index.title' => 'الرئيسية',
+    'dashboard.index.title' => 'الرئيسية',
+    'dashboard.index.title' => 'الرئيسية',
 
     // Dashboard Page
 
