@@ -2,6 +2,7 @@
 
 use App\Enums\Permission;
 use App\Livewire\Pages\Dashboard\Pages\Index\Pages\Index as DashboardIndex;
+use App\Livewire\Pages\Dashboard\Pages\Profile\Pages\Index as ProfileIndex;
 use App\Livewire\Pages\Admin\Pages\Users\Pages\Index as UsersIndex;
 use App\Livewire\Pages\Admin\Pages\HR\Pages\Index as HrIndex;
 use Illuminate\Support\Facades\Route;
@@ -9,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('dashboard')->name('dashboard.')->middleware(['auth' , 'permission:'. Permission::DashboardAccess->value])->group(function(){
     Route::get('/', DashboardIndex::class)->name('index');
     Route::get('/settings', DashboardIndex::class)->name('settings');
-    Route::get('/profile', DashboardIndex::class)->name('profile');
+    Route::get('/profile', ProfileIndex::class)->name('profile');
 
 
     Route::prefix('users')->name('users.')->middleware('permission:'. Permission::ManageUsers->value)->group(function(){

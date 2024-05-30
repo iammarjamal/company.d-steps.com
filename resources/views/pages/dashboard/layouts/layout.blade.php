@@ -168,7 +168,7 @@
 
                         <!-- Notification -->
                         <div class="relative">
-                            {{--                            <livewire:components.dashboard.notifications />--}}
+                            <livewire:components.notifications/>
                         </div>
                         <!-- Notification -->
                     </div>

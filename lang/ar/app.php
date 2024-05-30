@@ -6,6 +6,11 @@ return [
     'name' => 'D-Steps',
     // Config
 
+    'password' => 'كلمة المرور',
+    'password_confirmation' => 'تأكيد كلمة المرور',
+    'old_password' => 'كلمة المرور السابقة',
+    'new_password' => 'كلمة المرور الجديدة',
+
     // Elements
     'LightMode' => 'المضيء',
     'DefaultMode' => 'الإفتراضي',
@@ -92,13 +97,16 @@ return [
     'dashboard.index.title' => 'الرئيسية',
     'dashboard.navbar.general.profile' => 'الملف الشخصي',
     'dashboard.navbar.general.logout' => 'تسجيل الخروج',
-
+    'dashboard.navbar.general.notifications.btn' => 'قراءة الكٌل',
     'dashboard.navbar.title.users' => 'المستخدمين',
     'dashboard.users.index' => 'المستخدمين',
     'dashboard.users.hr' => 'HR',
 
     'dashboard.users.add.btn' => 'أضف مستخدم',
     'dashboard.hr.add.btn' => 'أضف HR',
+    'dashboard.profile.title' => 'الملف الشخصي',
+    'dashboard.profile.btn' => 'حفظ التعديلات',
+    'dashboard.profile.change.password' => 'تغيير كلمة المرور',
     // Dashboard Page
 
 

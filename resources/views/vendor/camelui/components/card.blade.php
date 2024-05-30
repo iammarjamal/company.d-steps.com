@@ -15,7 +15,7 @@
 
 <div class=
   "
-  {{ $class }} 
+  {{ $class }}
 
   {{ $backgraound == 'none' ? '' : null }}
   {{ $borderColor == 'normal' ? 'bg-zinc-50 dark:bg-zinc-800' : null }}
