@@ -5,7 +5,7 @@ return [
     'dir' => 'rtl',
     'name' => 'D-Steps',
     // Config
-    
+
     // Elements
     'LightMode' => 'المضيء',
     'DefaultMode' => 'الإفتراضي',
@@ -81,14 +81,23 @@ return [
 
     // Reset Password Page
     'auth.reset.password.title' => 'استعادة كلمة المرور',
-    
+
     /* Auth Pages */
 
     /* Dashboard Pages */
 
     // Dashboard Page
+    'dashboard.navbar.title.general' => 'عَام',
+    'dashboard.navbar.index' => 'الرئيسية',
     'dashboard.index.title' => 'الرئيسية',
+    'dashboard.navbar.general.profile' => 'الملف الشخصي',
+    'dashboard.navbar.general.logout' => 'تسجيل الخروج',
 
+    'dashboard.navbar.title.users' => 'المستخدمين',
+    'dashboard.users.index' => 'المستخدمين',
+    'dashboard.users.hr' => 'HR',
+
+    'dashboard.users.add.btn' => 'أضف مستخدم'
     // Dashboard Page
 
 

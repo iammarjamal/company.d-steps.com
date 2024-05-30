@@ -9,7 +9,7 @@
     </div>
 
     <x-camelui::heading size="4xl">
-        
+
     </x-camelui::heading>
 
 </div>

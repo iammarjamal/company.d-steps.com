@@ -9,21 +9,23 @@ class Index extends Component
 
     public function create()
     {
-        
+
     }
 
     public function update()
     {
-        
+
     }
 
     public function delete()
     {
-        
+
     }
 
     public function render()
     {
-        return view('pages.dashboard.pages.index.pages.index');
+        return view('pages.dashboard.pages.index.pages.index')
+            ->layout('pages.dashboard.layouts.layout')
+            ->title(trans('app.dashboard.index.title'));
     }
 }

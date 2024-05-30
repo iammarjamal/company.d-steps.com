@@ -1,10 +1,10 @@
-@props([ 
+@props([
     // Add Custom Class
     'class' => !empty($class) ? $class : null,
-    
+
     // Select Color (By Default primary)
     'color' => !empty($style) ? $style : 'primary',
-    
+
     // Add Icon
     'icon' => !empty($icon) ? $icon : null,
 
@@ -17,14 +17,14 @@
     <a {{ $attributes }}>
         <button
         class="
-        {{ $class }} 
+        {{ $class }}
         {{ $color == 'primary' ? 'text-white dark:bg-primary-600 bg-primary-500 ' : null }}
-        {{ $color == 'secondary' ? 'text-white dark:bg-secondary-500 bg-secondary-600' : null }} 
-        {{ $color == 'success' ? 'text-white dark:bg-success-500 bg-success-600' : null }} 
+        {{ $color == 'secondary' ? 'text-white dark:bg-secondary-500 bg-secondary-600' : null }}
+        {{ $color == 'success' ? 'text-white dark:bg-success-500 bg-success-600' : null }}
         {{ $color == 'danger' ? 'text-white dark:bg-danger-500 bg-danger-600' : null }}
-        {{ $color == 'warning' ? 'text-white dark:bg-warning-500 bg-warning-600' : null }} 
+        {{ $color == 'warning' ? 'text-white dark:bg-warning-500 bg-warning-600' : null }}
         {{ $color == 'info' ? 'text-white dark:bg-info-500 bg-info-600' : null }}
-        
+
         {{ $color == 'white' ? 'text-white dark:bg-white-500 bg-white-600' : null }}
         {{ $color == 'black' ? 'text-black dark:text-black' : null }}
 
@@ -33,11 +33,11 @@
         role="button"
         {{ $attributes }}
         >
-    
+
         @if(!empty($icon))
         <div class="flex justify-between w-full">
             <div class="flex items-center justify-start text-start">
-                <svg class="w-5 h-5 rtl:-mr-1 ltr:-ml-1 ltr:mr-2 rtl:ml-2 text-white animate-spin 
+                <svg class="w-5 h-5 rtl:-mr-1 ltr:-ml-1 ltr:mr-2 rtl:ml-2 text-white animate-spin
                 {{ $color == 'none' ? 'text-black dark:text-white' : 'text-white' }}
                 " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" wire:loading>
                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
@@ -51,7 +51,7 @@
                 <i class="{{ $icon }} rtl:mr-4 ltr:ml-4"></i>
             </div>
         </div>
-        
+
         @else
         <div class="flex items-center justify-center w-full">
             <h1 class="font-bold">
@@ -69,7 +69,7 @@
     </a>
     @else
     <a class="{{ $class }}
-    text-black dark:text-white" 
+    text-black dark:text-white"
     {{ $attributes }}
     >
         {{ $slot }}

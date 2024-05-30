@@ -1,4 +1,4 @@
-@extends('layouts.app') 
+@extends('layouts.app')
 
 @section('slot')
 <div class="flex flex-col items-center justify-center">
@@ -18,6 +18,23 @@
 
                 <div class="inline-flex items-center justify-end text-end gap-x-2">
 
+                    <!-- Shorticon Desktop -->
+                    <div class="items-center justify-start gap-1 text-center hidden lg:inline-flex">
+                        <div x-on:click="$refs.html.classList.remove('overflow-y-hidden')">
+                            @if(!Auth::check())
+                                <x-camelui::link class="py-2.5" href="{{ route('auth.login') }}" icon="fa-solid fa-user" wire:navigate button>
+                                    <span class="">{{ trans('app.auth.login.title') }}</span>
+                                </x-camelui::link>
+                            @else
+                                <x-camelui::link href="{{ route('dashboard.index') }}" class="relative block w-10 h-10 overflow-hidden border-2 rounded-full shadow border-zinc-200 dark:border-zinc-700 focus:outline-none" wire:navigate>
+                                    <x-camelui::avatar />
+                                </x-camelui::link>
+                            @endif
+                        </div>
+                    </div>
+                    <!-- Shorticon Desktop -->
+
+
                     <!-- DarkMode -->
                     <div>
                         <x-darkmode box="true" />
@@ -29,7 +46,8 @@
                         <x-language box="true" />
                     </div>
                     <!-- Language --> --}}
-                    
+
+
                     <!-- Menu -->
                     <div x-data="{ navbar: false }">
                         <div class="rounded-lg cursor-pointer">
@@ -90,6 +108,15 @@
                                                 {{ trans('app.home.branches.title') }}
                                             </h1>
                                         </a>
+                                        @if(!Auth::check())
+                                            <x-camelui::link class="py-2.5" href="{{ route('auth.login') }}" icon="fa-solid fa-user" wire:navigate button>
+                                                <span class="">{{ trans('app.auth.login.title') }}</span>
+                                            </x-camelui::link>
+                                        @else
+                                            <x-camelui::link href="{{ route('dashboard.index') }}" class="relative block w-10 h-10 overflow-hidden border-2 rounded-full shadow border-zinc-200 dark:border-zinc-700 focus:outline-none" wire:navigate>
+                                                <x-camelui::avatar />
+                                            </x-camelui::link>
+                                        @endif
                                     </div>
                                 </div>
                             </div>

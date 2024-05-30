@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html x-ref="html" lang="{{ trans('app.lang') }}" dir="{{ trans('app.dir') }}" class="scroll-smooth no-scrollbar" x-data="{ theme: localStorage.getItem('theme'), body: false }"  x-init="$watch('theme', (val) => localStorage.setItem('theme', val)), window.addEventListener('DOMContentLoaded', function () { setTimeout(function() { body = true; }, 1800); if(theme == null || theme == 'true' || theme == 'false'){ theme = 'system'; } })" :class="{ 'dark' : theme == 'dark' || theme == 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches }">
+<html x-ref="html" lang="{{ trans('app.lang') }}" dir="{{ trans('app.dir') }}" class="scroll-smooth no-scrollbar"
+      x-data="{ theme: localStorage.getItem('theme'), list: JSON.parse(localStorage.getItem('list')) ,body: false }"  x-init="$watch('theme', (val) => localStorage.setItem('theme', val)), $watch('list', (val) => localStorage.setItem('list', val)), window.addEventListener('DOMContentLoaded', function () { setTimeout(function() { body = true; }, 1800); if(theme == null || theme == 'true' || theme == 'false'){ theme = 'system'; } })" :class="{ 'dark' : theme == 'dark' || theme == 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches }">
 <head>
 
     <!-- Base Meta -->
     <meta charset="UTF-8">
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
+
     <title>{{ trans('app.name') }} - {{ $title ?? '' }}</title>
     <meta name="description" content="{{ $description ?? ''}}">
     <link rel="home" href="{{ route('home.index') }}">
@@ -81,11 +82,11 @@
         @endif
     </script>
     <!-- Setup -->
-    
+
     @livewireStyles
 </head>
 <body class="transition-all duration-500 no-scrollbar bg-zinc-50 dark:bg-zinc-900">
-    
+
     <!-- Body -->
     <div x-show="body" x-cloak>
         @yield('slot')
@@ -118,7 +119,7 @@
         </div>
     </noscript>
     <!-- NoScript -->
-    
+
     <!-- Script -->
     @livewireScripts
     <!-- Script -->

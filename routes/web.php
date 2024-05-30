@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\General\LanguageController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\URL;
 
@@ -15,3 +16,6 @@ require __DIR__.'/web/admin/admin.php';
 if(env('APP_DEBUG') == false){
     URL::forceScheme('https');
 }
+
+
+
