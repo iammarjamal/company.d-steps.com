@@ -4,9 +4,10 @@ namespace Database\Seeders;
 
 use App\Enums\Role;
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+
+// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class DatabaseSeeder extends Seeder
 {
@@ -40,5 +41,11 @@ class DatabaseSeeder extends Seeder
 
         $firstAdmin->assignRole(Role::Admin);
         $secondAdmin->assignRole(Role::Admin);
+
+
+        for ($i = 0; $i < 10; $i++) {
+            $user = User::factory()->create();
+            $user->assignRole(Role::User);
+        }
     }
 }

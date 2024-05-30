@@ -182,7 +182,7 @@
             <!-- Header -->
 
             <!-- App -->
-            <div class="z-10 flex flex-col w-full mt-10" id="App">
+            <div class="z-10 flex flex-col w-full mt-10 pb-10" id="App">
                 {{ $slot }}
             </div>
             <!-- App -->
