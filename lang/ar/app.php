@@ -97,7 +97,8 @@ return [
     'dashboard.users.index' => 'المستخدمين',
     'dashboard.users.hr' => 'HR',
 
-    'dashboard.users.add.btn' => 'أضف مستخدم'
+    'dashboard.users.add.btn' => 'أضف مستخدم',
+    'dashboard.hr.add.btn' => 'أضف HR',
     // Dashboard Page
 
 

@@ -129,10 +129,9 @@
         @forelse ($users as $user)
             <div
                 :class="list ? 'flex flex-col w-full p-1 cursor-pointer' : 'm-1 p-1  w-1/2 md:w-1/3 lg:w-1/4'">
-                <livewire:pages.dashboard.pages.users.pages.single-user @filters="$refresh" :$user
+                <livewire:pages.admin.pages.users.pages.single-user @filters="$refresh" :$user
                                                                      wire:key="table-{{random_int(1000000, 9999999)}}-{{$user->id}}"/>
             </div>
-{{--            <livewire:pages.dashboard.pages.users.pages.single-user :user="$user" />--}}
         @empty
             <div class="flex flex-col items-center justify-center w-full h-screen text-center max-h-80"
                  wire:key="empty">

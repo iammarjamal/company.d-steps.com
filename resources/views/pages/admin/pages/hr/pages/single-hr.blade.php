@@ -87,7 +87,7 @@
 
         <!-- Update -->
             <x-camelui::modal wire="update">
-                <div x-data="{ user: true }" x-on:save.window="popup = false">
+                <div x-data="{ user: true }" x-on:save.window="update = false">
                     <!-- First Step -->
                     <div
                         x-show="user"
@@ -144,7 +144,7 @@
         <!-- Remove -->
         <x-camelui::modal wire="remove">
             <x-camelui::heading size="md">
-                هل تريد حذف العميل ؟، هذا الإجراء لا يمكن التراجع عنه
+                هل تريد حذف HR ؟، هذا الإجراء لا يمكن التراجع عنه
             </x-camelui::heading>
             <div class="flex flex-col justify-between w-full mt-3">
                 <form wire:submit="remove({{ $id }})">

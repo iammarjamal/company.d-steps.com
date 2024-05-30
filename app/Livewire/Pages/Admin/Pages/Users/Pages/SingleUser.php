@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Livewire\Pages\Dashboard\Pages\Users\Pages;
+namespace App\Livewire\Pages\Admin\Pages\Users\Pages;
 
 use App\Models\User;
 use Illuminate\Validation\Rule;
 use Livewire\Component;
-use App\Livewire\Pages\Dashboard\Pages\Users\Pages\Index as UsersIndex;
+use App\Livewire\Pages\Admin\Pages\Users\Pages\Index as UsersIndex;
 
 class SingleUser extends Component
 {
@@ -15,6 +15,7 @@ class SingleUser extends Component
     public $email;
     public $password;
     public $password_confirmation;
+
 
     private function resetInputs()
     {
@@ -69,6 +70,6 @@ class SingleUser extends Component
 
     public function render()
     {
-        return view('pages.dashboard.pages.users.pages.single-user');
+        return view('pages.admin.pages.users.pages..single-user');
     }
 }

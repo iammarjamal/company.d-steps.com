@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Pages\Dashboard\Pages\Users\Pages;
+namespace App\Livewire\Pages\Admin\Pages\HR\Pages;
 
 use App\Enums\Role;
 use App\Models\User;
@@ -43,7 +43,7 @@ class Index extends Component
         ]);
 
         $user = User::create($data);
-        $user->assignRole(Role::User);
+        $user->assignRole(Role::HR);
         $this->dispatch('save');
         $this->resetInputs();
     }
@@ -71,7 +71,7 @@ class Index extends Component
     {
         $usersQuery = User::orderBy('created_at', 'DESC')
             ->whereDoesntHave('roles', function ($query) {
-                $query->whereIn('name', ['admin', 'hr']);
+                $query->whereIn('name', ['admin', 'user']);
             });
 
         if ($this->search) {
@@ -86,7 +86,7 @@ class Index extends Component
         $count = $usersQuery->count();
 
 
-        return view('pages.dashboard.pages.users.pages.index', [
+        return view('pages.admin.pages.hr.pages.index', [
             'users' => $users,
             'count' => $count,
         ])
