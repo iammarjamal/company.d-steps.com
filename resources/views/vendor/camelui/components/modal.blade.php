@@ -1,7 +1,7 @@
 @props([
     // Add Custom Class
     'class' => !empty($class) ? $class : null,
-    
+
     // Select Required
     'required' => !empty($required) ? $required : false,
 

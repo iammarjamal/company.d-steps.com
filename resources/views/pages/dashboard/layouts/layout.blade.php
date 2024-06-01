@@ -82,6 +82,23 @@
                         @endif
                         <!-- Users -->
 
+                        <!-- Notifications -->
+                        <div class="mb-3">
+                            <li class="flex items-start mx-4 mt-2 mb-0">
+                                <span
+                                    class="text-xs text-indigo-600 dark:text-indigo-400">{{ trans('app.dashboard.navbar.title.activity') }}</span>
+                            </li>
+
+                            <a
+                                class="{{ Route::currentRouteName() === 'dashboard.notifications.manage' ? 'bg-zinc-200 dark:bg-zinc-800 bg-opacity-25' : '' }} flex items-center px-4 py-2 mx-2 mt-1 rounded-md hover:bg-zinc-200 dark:hover:bg-zinc-800 hover:bg-opacity-25 text-zinc-900 dark:text-zinc-100 cursor-pointer"
+                                x-on:click="Sidebar = window.innerWidth <= 1024 ? false : true; setTimeout(() => { Livewire.navigate('{{ route('dashboard.notifications.manage') }}') }, 350)"
+                            >
+                                <i class="inline-flex text-xl flex-inline {{ Route::currentRouteName() === 'dashboard.notifications.manage' ? 'bx bxs-bell' : 'bx bx-bell' }}"></i>
+                                <p class="mx-3 text-lg">{{ trans('app.dashboard.navbar.title.notifications') }}</p>
+                            </a>
+                        </div>
+                        <!-- Notifications -->
+
                     </div>
                 </nav>
             </aside>
@@ -191,4 +208,19 @@
 
 
     </div>
+    <script>
+        window.addEventListener('DOMContentLoaded' ,function () {
+            const id = {{auth()->user()->id}}
+            window.Echo.private(`App.Models.User.${id}`)
+                .listen('UserNotificationSent', (e) => {
+                    Livewire.dispatch('notify');
+                    // console.log(e);
+                })
+                .listen('UserNotificationDeleted', (e) => {
+                    Livewire.dispatch('notify');
+                });
+
+        });
+
+    </script>
 @endsection

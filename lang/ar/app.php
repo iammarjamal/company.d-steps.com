@@ -32,6 +32,11 @@ return [
     'user.old_password' => 'كلمة المرور السابقة',
     'user.new_password' => 'كلمة المرور الجديدة',
 
+    'notifications.title' => 'العنوان',
+    'notifications.body' => 'النص',
+    'notifications.users' => 'المستخدمين',
+    'send' => 'أرسل',
+
     'cost' => 'التكلفة',
     'price' => 'السعر',
     'gtin' => 'الباركود',
@@ -93,12 +98,17 @@ return [
 
     // Dashboard Page
     'dashboard.navbar.title.general' => 'عَام',
+    'dashboard.navbar.title.activity' => 'نشاط',
     'dashboard.navbar.index' => 'الرئيسية',
     'dashboard.index.title' => 'الرئيسية',
     'dashboard.navbar.general.profile' => 'الملف الشخصي',
     'dashboard.navbar.general.logout' => 'تسجيل الخروج',
     'dashboard.navbar.general.notifications.btn' => 'قراءة الكٌل',
     'dashboard.navbar.title.users' => 'المستخدمين',
+    'dashboard.navbar.title.notifications' => 'الإشعارات',
+    'dashboard.navbar.title.notifications.new' => 'إنشاء جديد',
+    'dashboard.navbar.title.notifications.sent' => 'الصادر',
+    'dashboard.navbar.title.notifications.inbox' => 'الوارد',
     'dashboard.users.index' => 'المستخدمين',
     'dashboard.users.hr' => 'HR',
 

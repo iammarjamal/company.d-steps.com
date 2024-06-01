@@ -159,5 +159,7 @@ return [
         'username'              => 'اسم المُستخدم',
         'year'                  => 'السنة',
         'receipt'               => 'الإيصال',
+        'content'               => 'النص',
+        'targetUser'               => 'المرسل إليه',
     ],
 ];

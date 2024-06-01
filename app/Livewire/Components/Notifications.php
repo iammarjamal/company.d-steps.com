@@ -10,16 +10,19 @@ use Livewire\Component;
 
 class Notifications extends Component
 {
+    protected $listeners = [
+        'notify' => 'refreshComponent'
+    ];
 
     public function read($id)
     {
-        if($id == 0){
-            notification::where('user_id', Auth::user()->id)->where('status', 'unread')->where('role', 'user')->update([
+        if ($id == 0) {
+            notification::where('to', Auth::user()->id)->where('status', 'unread')->update([
                 'status' => 'read',
                 'updated_at' => Carbon::now()
             ]);
-        }else{
-            notification::where('user_id', Auth::user()->id)->where('id', $id)->where('role', 'user')->update([
+        } else {
+            notification::where('to', Auth::user()->id)->where('id', $id)->update([
                 'status' => 'read',
                 'updated_at' => Carbon::now()
             ]);
@@ -28,12 +31,17 @@ class Notifications extends Component
         $this->dispatch('notification')->self();
     }
 
+    public function refreshComponent()
+    {
+
+    }
+
     #[On('notification')]
     public function render()
     {
         return view('components.notifications', [
-            'notifications' => Notification::where('user_id', Auth::user()->id)->orderBy('id', 'desc')->take(10)->get(),
-            'number' => Notification::where('user_id', Auth::user()->id)->where('status', 'unread')->count(),
+            'notifications' => Notification::where('to', Auth::user()->id)->orderBy('id', 'desc')->take(10)->get(),
+            'number' => Notification::where('to', Auth::user()->id)->where('status', 'unread')->count(),
         ]);
     }
 }

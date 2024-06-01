@@ -60,7 +60,7 @@
             </div>
         </div>
     @endif
-    <div class="w-full p-2 pt-6 mt-3 border-t border-zinc-200/60 dark:border-zinc-800 mb-20 lg:py-5  sm:px-2 md:px-4 lg:px-6 xl:px-8">
+    <div class="w-full pt-4 px-6 mt-1 border-t border-zinc-200/60 dark:border-zinc-800 mb-20 lg:py-5  sm:px-2 md:px-4 lg:px-6 xl:px-8">
         <div class="max-w-2xl p-2 mx-auto lg:mt-12">
             <x-camelui::card class="p-6" rounded="2xl">
                 <!-- Profile -->

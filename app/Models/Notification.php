@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Notification extends Model
 {
     use HasFactory;
+
+    protected $guarded = [];
+
+    public function sender()
+    {
+        return $this->belongsTo(User::class, 'from');
+    }
+
+    public function receiver()
+    {
+        return $this->belongsTo(User::class, 'to');
+    }
 }

@@ -8,6 +8,7 @@
         "php": "^8.2",
         "iammarjamal/camelui": "^1.25",
         "laravel/framework": "^11.0",
+        "laravel/reverb": "@beta",
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.4",
         "spatie/laravel-permission": "^6.7"

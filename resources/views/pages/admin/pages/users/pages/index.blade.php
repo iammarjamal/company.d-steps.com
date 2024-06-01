@@ -1,4 +1,4 @@
-<div class="w-full pt-4 px-6 border-t border-zinc-900/5 dark:border-zinc-50/5">
+<div class="w-full pt-4 px-6 mt-1  border-t border-zinc-900/5 dark:border-zinc-50/5">
 
 
     <div class="flex flex-row justify-between mx-2 mb-5 font-serif leading-5 text-neutral-700">

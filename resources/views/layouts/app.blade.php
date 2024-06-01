@@ -123,5 +123,6 @@
     <!-- Script -->
     @livewireScripts
     <!-- Script -->
+
 </body>
 </html>

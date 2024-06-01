@@ -27,9 +27,9 @@ class RolesAndPermissionsSeeder extends Seeder
         $adminRole->givePermissionTo(PermissionEnum::cases());
 
         $hrRole = Role::findByName(RoleEnum::HR->value);
-        $hrRole->givePermissionTo(PermissionEnum::DashboardAccess);
+        $hrRole->givePermissionTo([PermissionEnum::DashboardAccess , PermissionEnum::ManageNotifications]);
 
         $userRole = Role::findByName(RoleEnum::User->value);
-        $userRole->givePermissionTo(PermissionEnum::DashboardAccess);
+        $userRole->givePermissionTo([PermissionEnum::DashboardAccess , PermissionEnum::ManageNotifications]);
     }
 }
