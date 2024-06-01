@@ -35,6 +35,9 @@ return [
     'notifications.title' => 'العنوان',
     'notifications.body' => 'النص',
     'notifications.users' => 'المستخدمين',
+    'notifications.new' => 'إشعار جديد',
+    'notifications.sent' => 'الإشعارات المرسلة',
+    'notifications.inbox' => 'الإشعارات الواردة',
     'send' => 'أرسل',
 
     'cost' => 'التكلفة',

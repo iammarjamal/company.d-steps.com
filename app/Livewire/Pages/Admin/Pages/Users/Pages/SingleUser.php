@@ -70,6 +70,6 @@ class SingleUser extends Component
 
     public function render()
     {
-        return view('pages.admin.pages.users.pages..single-user');
+        return view('pages.admin.pages.users.pages.single-user');
     }
 }
