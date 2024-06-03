@@ -56,6 +56,7 @@ return [
     'close' => 'إغلاق',
     'empty' => 'لا يوجد سجلات',
     'search' => 'بحث',
+    'reset' => 'تهيئة',
     'error' => 'خطأ',
     // Elements
 
