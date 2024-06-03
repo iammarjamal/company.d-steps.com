@@ -123,6 +123,6 @@
     <!-- Script -->
     @livewireScripts
     <!-- Script -->
-
+@stack('js')
 </body>
 </html>

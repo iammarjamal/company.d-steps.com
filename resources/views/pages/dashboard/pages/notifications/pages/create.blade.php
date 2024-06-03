@@ -30,20 +30,73 @@
     <form wire:submit.prevent="send">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
             <div class="mt-0">
-                <label for="user"
+                <label for="users"
                        class="block text-sm font-medium text-gray-700">{{ trans('app.notifications.users') }}</label>
-                <select id="user" name="user" wire:model="targetUser"
+                <div class="relative" id="users" x-data="{ open: false , searching : false }"
+                     x-on:select-contact.window="open = true; searching = false">
+                    <input
+                        x-on:focus="open = true"
+                        @click.outside="open = false"
+                        {{--                        @keydown.enter="$wire.selectContact(),open = true"--}}
+                        type="text"
                         class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-lg p-2.5"
-                        required>
-                    <option selected>اختر مستخدم</option>
-                    @foreach($users as $user)
-                        <option value="{{$user->id}}">{{$user->username}}</option>
-                    @endforeach
-                </select>
-                @error('targetUser')
-                <span class="text-xs text-red-400">{{ $message }}</span>
-                @enderror
+                        placeholder="اختر مستخدم"
+                        wire:model="query"
+                        {{--                        wire:keyup.debounce.100ms="selectContact; searching = true"--}}
+                        wire:keydown.enter.prevent="selectContact; open = false; searching = true"
+                        wire:keyup.enter.stop.prevent=""
+                    />
+
+                    <div x-show="searching" class="absolute z-10 w-full bg-white rounded-t-none shadow-lg list-group">
+                        <div class="p-8 font-bold bg-gray-50">جاري البحث...</div>
+                    </div>
+
+                    {{--                    @if(!empty($query))--}}
+                    <div x-show="open"
+                         class="absolute mt-1 z-10 max-h-96 overflow-y-scroll w-full bg-white rounded-t-none shadow-lg">
+
+                        @forelse($users as  $user)
+                            <a
+                                wire:click.prevent="createTag({{$user->id}}); searching = false"
+                                class="block cursor-pointer p-8 font-bold hover:bg-gray-100 "
+                            >{{ $user->username }}</a>
+                        @empty
+
+                            <div class="block p-8 font-bold bg-gray-50">لا يوجد نتائج!</div>
+                        @endforelse
+                    </div>
+                    {{--                    @endif--}}
+
+                    <div class="flex flex-wrap gap-2 p-4">
+                        @foreach($targetUsers as $user)
+                            <span
+                                class="inline-flex  gap-2 items-center text-sm p-2 rounded-full bg-yellow-200 text-gray-600 ">{{$user->username}}
+                            <button type="button" role="button" wire:click="removeTag({{$user->id}})"
+                                    class="font-light">x</button>
+                            </span>
+                        @endforeach
+                        @error('targetUsers')
+                        <span class="text-xs text-red-400">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                </div>
             </div>
+{{--            <div class="mt-0">--}}
+{{--                <label for="user"--}}
+{{--                       class="block text-sm font-medium text-gray-700">{{ trans('app.notifications.users') }}</label>--}}
+{{--                <select id="user" name="user" wire:model="targetUser"--}}
+{{--                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-lg p-2.5"--}}
+{{--                        required>--}}
+{{--                    <option selected>اختر مستخدم</option>--}}
+{{--                    @foreach($users as $user)--}}
+{{--                        <option value="{{$user->id}}">{{$user->username}}</option>--}}
+{{--                    @endforeach--}}
+{{--                </select>--}}
+{{--                @error('targetUser')--}}
+{{--                <span class="text-xs text-red-400">{{ $message }}</span>--}}
+{{--                @enderror--}}
+{{--            </div>--}}
             <div class="mt-0">
                 <label for="title"
                        class="block text-sm font-medium text-gray-700">{{ trans('app.notifications.title') }}</label>

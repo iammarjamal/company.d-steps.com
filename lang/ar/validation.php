@@ -161,5 +161,6 @@ return [
         'receipt'               => 'الإيصال',
         'content'               => 'النص',
         'targetUser'               => 'المرسل إليه',
+        'targetUsers'               => 'المرسل إليهم',
     ],
 ];
