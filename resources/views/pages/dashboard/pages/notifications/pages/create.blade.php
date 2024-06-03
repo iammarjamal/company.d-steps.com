@@ -53,12 +53,12 @@
 
                     {{--                    @if(!empty($query))--}}
                     <div x-show="open"
-                         class="absolute mt-1 z-10 max-h-96 overflow-y-scroll w-full bg-white rounded-t-none shadow-lg">
+                         class="absolute mt-1 z-10 max-h-72 overflow-y-scroll w-full bg-white rounded-t-none shadow-lg">
 
                         @forelse($users as  $user)
                             <a
                                 wire:click.prevent="createTag({{$user->id}}); searching = false"
-                                class="block cursor-pointer p-8 font-bold hover:bg-gray-100 "
+                                class="block cursor-pointer py-6 px-8 font-bold hover:bg-gray-100 "
                             >{{ $user->username }}</a>
                         @empty
 
