@@ -153,7 +153,7 @@
     </div>
     @if($count > $pagination)
         <div class="flex flex-col items-center justify-center w-full pt-8 mt-32 text-center">
-            <x-camelui::button class="py-2" color="primary" wire:click="pagination">
+            <x-camelui::button class="py-2" color="primary" wire:click="setPagination">
                 {{ trans('app.more') }}
             </x-camelui::button>
         </div>

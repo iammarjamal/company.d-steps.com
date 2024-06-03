@@ -25,7 +25,7 @@ class Index extends Component
     public $search;
 
     // Pagination
-    public $pagination = 10;
+    public $pagination = 5;
 
     protected $listeners = ['save' => 'handleSave'];
 
@@ -65,6 +65,12 @@ class Index extends Component
 
         // Close Sidebar
         $this->dispatch('filters');
+    }
+
+
+    public function setPagination()
+    {
+        $this->pagination += 5;
     }
 
     public function render()
