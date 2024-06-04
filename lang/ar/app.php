@@ -46,6 +46,11 @@ return [
     'country' => 'الدولة',
     'city' => 'المدينة',
     'address' => 'العنوان',
+    'title' => 'العنوان',
+    'description' => 'الوصف',
+    'starts_at' => 'تبدأ من',
+    'ends_at' => 'تنتهي في',
+    'advance-payment-value' => 'قيمة السلفة',
 
     'more' => 'عرض المزيد',
     'edit' => 'تعديل',
@@ -103,6 +108,9 @@ return [
     // Dashboard Page
     'dashboard.navbar.title.general' => 'عَام',
     'dashboard.navbar.title.activity' => 'نشاط',
+    'dashboard.navbar.title.requests' => 'طلبات',
+    'dashboard.navbar.title.vacation' => 'إجازة',
+    'dashboard.navbar.title.advance-payment' => 'سلفة مالية',
     'dashboard.navbar.index' => 'الرئيسية',
     'dashboard.index.title' => 'الرئيسية',
     'dashboard.navbar.general.profile' => 'الملف الشخصي',
@@ -118,6 +126,8 @@ return [
 
     'dashboard.users.add.btn' => 'أضف مستخدم',
     'dashboard.hr.add.btn' => 'أضف HR',
+    'dashboard.vacations.add.btn' => 'طلب إجازة',
+    'dashboard.advance-payment.add.btn' => 'طلب سلفة',
     'dashboard.profile.title' => 'الملف الشخصي',
     'dashboard.profile.btn' => 'حفظ التعديلات',
     'dashboard.profile.change.password' => 'تغيير كلمة المرور',

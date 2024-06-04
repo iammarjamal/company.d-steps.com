@@ -99,6 +99,32 @@
                         </div>
                         <!-- Notifications -->
 
+                        @if(auth()->user()->hasRole(\App\Enums\Role::User))
+                        <!-- Requests -->
+                        <div class="mb-3">
+                            <li class="flex items-start mx-4 mt-2 mb-0">
+                                <span
+                                    class="text-xs text-indigo-600 dark:text-indigo-400">{{ trans('app.dashboard.navbar.title.requests') }}</span>
+                            </li>
+
+                            <a
+                                class="{{ Route::currentRouteName() === 'dashboard.requests.vacation' ? 'bg-zinc-200 dark:bg-zinc-800 bg-opacity-25' : '' }} flex items-center px-4 py-2 mx-2 mt-1 rounded-md hover:bg-zinc-200 dark:hover:bg-zinc-800 hover:bg-opacity-25 text-zinc-900 dark:text-zinc-100 cursor-pointer"
+                                x-on:click="Sidebar = window.innerWidth <= 1024 ? false : true; setTimeout(() => { Livewire.navigate('{{ route('dashboard.requests.vacation') }}') }, 350)"
+                            >
+                                <i class="inline-flex text-xl flex-inline {{ Route::currentRouteName() === 'dashboard.requests.vacation' ? 'fa-solid fa-calendar' : 'fa-regular fa-calendar' }}"></i>
+                                <p class="mx-3 text-lg">{{ trans('app.dashboard.navbar.title.vacation') }}</p>
+                            </a>
+                            <a
+                                class="{{ Route::currentRouteName() === 'dashboard.requests.advance-payments' ? 'bg-zinc-200 dark:bg-zinc-800 bg-opacity-25' : '' }} flex items-center px-4 py-2 mx-2 mt-1 rounded-md hover:bg-zinc-200 dark:hover:bg-zinc-800 hover:bg-opacity-25 text-zinc-900 dark:text-zinc-100 cursor-pointer"
+                                x-on:click="Sidebar = window.innerWidth <= 1024 ? false : true; setTimeout(() => { Livewire.navigate('{{ route('dashboard.requests.advance-payments') }}') }, 350)"
+                            >
+                                <i class="inline-flex text-xl flex-inline {{ Route::currentRouteName() === 'dashboard.requests.advance-payments' ? 'fas fa-money-bill-alt' : 'far fa-money-bill-alt' }}"></i>
+                                <p class="mx-3 text-lg">{{ trans('app.dashboard.navbar.title.advance-payment') }}</p>
+                            </a>
+                        </div>
+                        <!-- Requests -->
+                        @endif
+
                     </div>
                 </nav>
             </aside>
@@ -213,12 +239,22 @@
             const id = {{auth()->user()->id}}
             window.Echo.private(`App.Models.User.${id}`)
                 .listen('UserNotificationSent', (e) => {
-                    Livewire.dispatch('notify');
+                    Livewire.dispatch('reverb_notification_sent');
                     // console.log(e);
                 })
                 .listen('UserNotificationDeleted', (e) => {
-                    Livewire.dispatch('notify');
+                    Livewire.dispatch('reverb_notification_deleted');
                 });
+
+            window.Echo.channel(`management`)
+                .listen('UserVacationDeleted', (e) => {
+                    Livewire.dispatch('reverb_vacation_deleted');
+                    // console.log(e);
+                })
+                .listen('UserAdvancePaymentDeleted', (e) => {
+                    Livewire.dispatch('reverb_advance-payment_deleted');
+                    // console.log(e);
+                })
 
         });
 

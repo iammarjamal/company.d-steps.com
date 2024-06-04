@@ -1,12 +1,15 @@
 <?php
 
 use App\Enums\Permission;
+use App\Enums\Role;
 use App\Livewire\Pages\Dashboard\Pages\Index\Pages\Index as DashboardIndex;
 use App\Livewire\Pages\Dashboard\Pages\Profile\Pages\Index as ProfileIndex;
 use App\Livewire\Pages\Dashboard\Pages\Notifications\Pages\Index as NotificationsIndex;
 use App\Livewire\Pages\Dashboard\Pages\Notifications\Pages\Create as CreateNotification;
 use App\Livewire\Pages\Dashboard\Pages\Notifications\Pages\Sent as SentNotifications;
 use App\Livewire\Pages\Admin\Pages\Users\Pages\Index as UsersIndex;
+use App\Livewire\Pages\Users\Pages\Vacations\Pages\Index as VacationIndex;
+use App\Livewire\Pages\Users\Pages\AdvancePayments\Pages\Index as AdvancePaymentsIndex;
 use App\Livewire\Pages\Admin\Pages\HR\Pages\Index as HrIndex;
 use Illuminate\Support\Facades\Route;
 
@@ -30,6 +33,12 @@ Route::prefix('dashboard')->name('dashboard.')->middleware(['auth' , 'permission
 //        Route::get('/new', CreateNotification::class)->name('new');
 //        Route::get('/sent', SentNotifications::class)->name('sent');
         Route::get('/manage', NotificationsIndex::class)->name('manage');
+    });
+
+
+    Route::prefix('requests')->name('requests.')->middleware('role:'. Role::User->value)->group(function(){
+        Route::get('/vacation', VacationIndex::class)->name('vacation');
+        Route::get('/advance-payments', AdvancePaymentsIndex::class)->name('advance-payments');
     });
 
 });

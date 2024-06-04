@@ -88,7 +88,6 @@
         <!-- Update -->
             <x-camelui::modal wire="update">
                 <div x-data="{ user: true }" x-on:save.window="update = false">
-                    <!-- First Step -->
                     <div
                         x-show="user"
                         x-transition:enter="transition-all duration-500"
@@ -131,9 +130,7 @@
                             </form>
                         </div>
                         <!-- User -->
-
                     </div>
-                    <!-- First Step -->
 
 
                 </div>

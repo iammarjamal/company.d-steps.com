@@ -11,7 +11,8 @@ use Livewire\Component;
 class Notifications extends Component
 {
     protected $listeners = [
-        'notify' => 'refreshComponent'
+        'reverb_notification_sent' => 'refreshComponent',
+        'reverb_notification_deleted' => 'refreshComponent',
     ];
 
     public function read($id)

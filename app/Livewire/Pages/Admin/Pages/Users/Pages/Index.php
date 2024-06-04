@@ -27,13 +27,6 @@ class Index extends Component
     // Pagination
     public $pagination = 5;
 
-    protected $listeners = ['save' => 'handleSave'];
-
-    public function handleSave()
-    {
-        // Code to handle the 'save' event
-    }
-
     public function save()
     {
         $data = $this->validate([
@@ -57,6 +50,11 @@ class Index extends Component
     }
 
     #[On('remove')]
+    #[On('save')]
+    public function resetFilter(){
+        $this->search = '';
+    }
+
     public function filters()
     {
         $this->validate([

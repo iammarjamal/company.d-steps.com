@@ -7,6 +7,6 @@ Broadcast::channel('App.Models.User.{id}', function ($user, $id) {
 });
 
 
-Broadcast::channel('user', function () {
+Broadcast::channel('management', function () {
     return true;
 });
