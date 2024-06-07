@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('description');
             $table->dateTime('starts_at');
             $table->dateTime('ends_at');
+            $table->dateTime('approved_at')->nullable();
             $table->enum('status', ['approved' , 'requested'])->default('requested');
             $table->timestamps();
         });

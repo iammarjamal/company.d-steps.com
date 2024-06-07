@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Livewire\Pages\Users\Pages\AdvancePayments\Pages;
+namespace App\Livewire\Pages\Admin\Pages\AdvancePayments\Pages;
 
 use App\Events\UserAdvancePaymentCreatedOrUpdated;
 use App\Events\UserAdvancePaymentDeleted;
+use App\Events\UserVacationCreatedOrUpdated;
 use App\Models\AdvancePayment;
-use Illuminate\Support\Facades\Auth;
+use App\Models\Vacation;
 use Livewire\Attributes\On;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -19,6 +20,8 @@ class Index extends Component
     public $status = 'all';
     public $created_at;
     public $approved_at;
+
+
     public $search;
 
     public function setToUpdate($id)
@@ -31,24 +34,20 @@ class Index extends Component
     public function deleteAdvancePayment($id)
     {
         $advancePayment = AdvancePayment::findOrFail($id);
-        if ($advancePayment->status != 'approved') {
-            $advancePayment->delete();
-            UserAdvancePaymentDeleted::dispatch();
-            $this->dispatch('remove')->self();
-        }
+        $advancePayment->delete();
+        UserAdvancePaymentDeleted::dispatch();
+        $this->dispatch('remove')->self();
     }
 
-    #[On('remove')]
-    #[On('save')]
-    #[On('update')]
-    public function resetFilters()
+    public function approveAdvancePayment($id)
     {
-        $this->status = 'all';
-        $this->search = '';
-        $this->created_at = '';
-        $this->approved_at = '';
+        $advancePayment = AdvancePayment::findOrFail($id);
+        $advancePayment->update([
+            'status' => 'approved',
+            'approved_at' => now()
+        ]);
+        UserAdvancePaymentCreatedOrUpdated::dispatch();
     }
-
     public function filters()
     {
         $this->validate([
@@ -61,22 +60,14 @@ class Index extends Component
         $this->dispatch('filters');
     }
 
-    public function save()
+    #[On('remove')]
+    #[On('update')]
+    public function resetFilters()
     {
-        $this->validate([
-            'title' => 'required|string',
-            'amount' => 'required|numeric',
-        ]);
-
-        AdvancePayment::create([
-            'user_id' => Auth::user()->id,
-            'title' => $this->title,
-            'amount' => $this->amount,
-        ]);
-
-        UserAdvancePaymentCreatedOrUpdated::dispatch();
-        $this->dispatch('save');
-        $this->reset(['title', 'amount']);
+        $this->status = 'all';
+        $this->search = '';
+        $this->created_at = '';
+        $this->approved_at = '';
     }
 
     public function update($id)
@@ -85,13 +76,11 @@ class Index extends Component
             'title' => 'required|string',
             'amount' => 'required|numeric',
         ]);
-
         $advancePayment = AdvancePayment::findOrFail($id);
         $advancePayment->update([
             'title' => $this->title,
             'amount' => $this->amount
         ]);
-
         UserAdvancePaymentCreatedOrUpdated::dispatch();
         $this->dispatch('update');
         $this->reset(['title', 'amount']);
@@ -101,7 +90,7 @@ class Index extends Component
     #[On('reverb_advance_payment_deleted')]
     public function render()
     {
-        $advancePaymentsQuery = AdvancePayment::where('user_id', Auth::user()->id)->orderBy('created_at', 'DESC');
+        $advancePaymentsQuery = AdvancePayment::orderBy('created_at', 'DESC');
 
         if ($this->status != 'all') {
             $advancePaymentsQuery->where('status', $this->status);
@@ -120,11 +109,10 @@ class Index extends Component
             $advancePaymentsQuery->whereDate('approved_at', $this->approved_at);
         }
 
-
         $advancePayments = $advancePaymentsQuery->paginate(5);
         $count = $advancePaymentsQuery->count();
 
-        return view('pages.users.pages.advance-payments.pages.index', [
+        return view('pages.admin.pages.advance-payments.pages.index', [
             'advancePayments' => $advancePayments,
             'count' => $count,
         ])

@@ -50,7 +50,12 @@ return [
     'description' => 'الوصف',
     'starts_at' => 'تبدأ من',
     'ends_at' => 'تنتهي في',
+    'created_at' => 'أنشأت في',
+    'approved_at' => 'قبلت في',
     'advance-payment-value' => 'قيمة السلفة',
+    'requested' => 'طلب حالي',
+    'approved' => 'موافق عليه',
+    'all' => 'الكل',
 
     'more' => 'عرض المزيد',
     'edit' => 'تعديل',
@@ -61,6 +66,7 @@ return [
     'close' => 'إغلاق',
     'empty' => 'لا يوجد سجلات',
     'search' => 'بحث',
+    'filter' => 'تصفية',
     'reset' => 'تهيئة',
     'error' => 'خطأ',
     // Elements

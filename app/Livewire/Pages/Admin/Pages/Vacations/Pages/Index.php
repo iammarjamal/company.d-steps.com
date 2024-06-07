@@ -1,27 +1,22 @@
 <?php
 
-namespace App\Livewire\Pages\Users\Pages\Vacations\Pages;
+namespace App\Livewire\Pages\Admin\Pages\Vacations\Pages;
 
 use App\Events\UserVacationCreatedOrUpdated;
 use App\Events\UserVacationDeleted;
 use App\Models\Vacation;
 use Carbon\Carbon;
-use Illuminate\Support\Facades\Auth;
 use Livewire\Attributes\On;
 use Livewire\Component;
-use Livewire\WithPagination;
 
 class Index extends Component
 {
-    use WithPagination;
-
-    public $status = 'all';
     public $title;
     public $description;
+    public $search;
+    public $status = 'all';
     public $starts_at;
     public $ends_at;
-
-    public $search;
 
     public function setToUpdate($id){
         $vacation = Vacation::findOrFail($id);
@@ -34,20 +29,19 @@ class Index extends Component
     public function deleteVacation($id)
     {
         $vacation = Vacation::findOrFail($id);
-        if($vacation->status != 'approved'){
-            $vacation->delete();
-            UserVacationDeleted::dispatch();
-            $this->dispatch('remove')->self();
-        }
+        $vacation->delete();
+        UserVacationDeleted::dispatch();
+        $this->dispatch('remove')->self();
     }
 
-    #[On('remove')]
-    #[On('save')]
-    #[On('update')]
-    public function resetFilters(){
-        $this->search = '';
-        $this->starts_at = '';
-        $this->ends_at = '';
+    public function approveVacation($id)
+    {
+        $vacation = Vacation::findOrFail($id);
+        $vacation->update([
+            'status' => 'approved',
+            'approved_at' => now()
+        ]);
+        UserVacationCreatedOrUpdated::dispatch();
     }
 
     public function filters()
@@ -62,29 +56,15 @@ class Index extends Component
         $this->dispatch('filters');
     }
 
-    public function save(){
-        $this->validate([
-           'title' => 'required|string',
-           'description'=>'required|string',
-            'starts_at' => ['nullable', 'date', function ($attribute, $value, $fail) {
-                if ($value && Carbon::parse($value)->isBefore(Carbon::today())) {
-                    $fail(__('validation.custom.starts_at.min_today'));
-                }
-            }],
-           'ends_at' => 'required|date|after:starts_at',
-        ]);
 
-        Vacation::create([
-           'user_id' => Auth::user()->id,
-           'title' => $this->title,
-           'description' => $this->description,
-           'starts_at' => Carbon::make($this->starts_at),
-           'ends_at' => Carbon::make($this->ends_at),
-        ]);
-
-        UserVacationCreatedOrUpdated::dispatch();
-        $this->dispatch('save');
-        $this->reset(['title', 'description', 'starts_at' , 'ends_at']);
+    #[On('remove')]
+    #[On('update')]
+    public function resetFilters()
+    {
+        $this->status = 'all';
+        $this->search = '';
+        $this->starts_at = '';
+        $this->ends_at = '';
     }
 
     public function update($id){
@@ -107,21 +87,19 @@ class Index extends Component
         ]);
         UserVacationCreatedOrUpdated::dispatch();
         $this->dispatch('update');
-        $this->reset(['title', 'description', 'starts_at' , 'ends_at']);
+        $this->reset(['title', 'description', 'starts_at' , 'ends_at' , 'search']);
     }
 
     #[On('reverb_vacation_created_or_updated')]
     #[On('reverb_vacation_deleted')]
     public function render()
     {
-//        $vacations  = Vacation::where('user_id' , Auth::user()->id)->orderBy('created_at', 'DESC')->paginate(5);
+        $vacationsQuery = Vacation::orderBy('created_at', 'DESC');
 
-        $vacationsQuery = Vacation::where('user_id' , Auth::user()->id)->orderBy('created_at', 'DESC');
 
         if ($this->status != 'all') {
             $vacationsQuery->where('status', $this->status);
         }
-
         if ($this->search) {
             $vacationsQuery->where('title', 'like', '%' . $this->search . '%')
                 ->orWhere('description', 'like', '%' . $this->search . '%')
@@ -140,9 +118,10 @@ class Index extends Component
         $vacations = $vacationsQuery->paginate(5);
         $count = $vacationsQuery->count();
 
-        return view('pages.users.pages.vacations.pages.index' , [
-            'vacations' => $vacations ,
-            'count' => $count,])
+        return view('pages.admin.pages.vacations.pages.index', [
+            'vacations' => $vacations,
+            'count' => $count,
+        ])
             ->layout('pages.dashboard.layouts.layout')
             ->title(trans('dashboard.navbar.title.vacation'));
     }

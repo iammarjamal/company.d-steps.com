@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('title');
             $table->double('amount');
+            $table->dateTime('approved_at')->nullable();
             $table->enum('status', ['approved' , 'requested'])->default('requested');
             $table->timestamps();
         });

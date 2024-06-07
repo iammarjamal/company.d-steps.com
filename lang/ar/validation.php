@@ -127,6 +127,9 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'starts_at' => [
+            'min_today' => 'يجب أن يكون تاريخ البدء اليوم أو في وقت لاحق.',
+        ],
     ],
     'attributes'           => [
         'address'               => 'العنوان',
@@ -164,5 +167,6 @@ return [
         'targetUsers'               => 'المرسل إليهم',
         'starts_at'               => '{تاريخ البداية}',
         'ends_at'               => '{تاريخ النهاية}',
+
     ],
 ];

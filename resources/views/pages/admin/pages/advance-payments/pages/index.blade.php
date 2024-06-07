@@ -1,47 +1,5 @@
 <div class="w-full pt-4 px-6 mt-1  border-t border-zinc-900/5 dark:border-zinc-50/5">
-
     <div class="flex flex-row justify-between mx-2 mb-5 font-serif leading-5 text-neutral-700">
-        <div class="flex flex-row items-center justify-center" x-data="{ popup: false }">
-            <x-camelui::button class="py-2" color="primary" icon="fa-solid fa-plus" x-on:click="popup = true"
-                               wire:target="create">
-                {{ trans('app.dashboard.advance-payment.add.btn') }}
-            </x-camelui::button>
-            <x-camelui::modal wire="popup">
-                <div x-data="{ user: true }" x-on:save.window="popup = false">
-                    <div
-                        x-show="user"
-                        x-transition:enter="transition-all duration-500"
-                        x-transition:enter-start="opacity-0 transform origin-center"
-                        x-transition:enter-end="opacity-100 transform origin-center"
-                        x-data="{ select: false }"
-                    >
-
-
-                        <div class="flex justify-center mb-6" x-show="user">
-                            <form wire:submit="save" class="flex flex-col w-full mt-3.5">
-                                <div class="relative w-full mb-3">
-                                    <x-camelui::input label="{{ trans('app.title') }}"
-                                                      placeholder="{{ trans('app.title') }}" wire="title"
-                                                      icon="" required="true"/>
-                                </div>
-                                <div class="relative w-full mb-3">
-                                    <x-camelui::input label="{{ trans('app.advance-payment-value') }}" type="number"
-                                                      placeholder="{{ trans('app.advance-payment-value') }}" wire="amount"
-                                                      icon="" required="true"/>
-                                </div>
-                                <div class="w-full mt-4">
-                                    <x-camelui::button class="py-3.5" color="primary" icon="fa-solid fa-plus"
-                                                       wire:target="save">
-                                        {{ trans('app.save') }}
-                                    </x-camelui::button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </x-camelui::modal>
-        </div>
-
         <div class="flex flex-row items-center justify-center gap-2">
             <input
                 type="text"
@@ -172,30 +130,31 @@
                             class="p-4 flex items-center justify-center flex-row gap-2">
 
                             <!-- Delete modal -->
-                            @if($advancePayment->status === 'requested')
-                                <x-camelui::link
-                                    x-on:click="remove = ! remove">
-                                    <i class="text-xl cursor-pointer fa-solid fa-trash text-danger-500 dark:text-danger-400"></i>
-                                </x-camelui::link>
-                                <x-camelui::modal wire="remove">
-                                    <x-camelui::heading size="md">
-                                        هل تريد حذف طلب السلفة ؟، هذا الإجراء لا يمكن التراجع عنه
-                                    </x-camelui::heading>
-                                    <div class="flex flex-col justify-between w-full mt-3">
-                                        <form wire:submit="deleteAdvancePayment({{ $advancePayment->id }})">
-                                            <x-camelui::button style="danger" class="py-2" icon="fa-solid fa-trash"
-                                                               wire:target="deleteAdvancePayment"
-                                                               x-on:click="setTimeout(() => { remove = false; }, 950)">
-                                                حذف
-                                            </x-camelui::button>
-                                        </form>
-                                    </div>
-                                </x-camelui::modal>
-                                <!-- Delete modal -->
+                            <x-camelui::link
+                                x-on:click="remove = ! remove">
+                                <i class="text-xl cursor-pointer fa-solid fa-trash text-danger-500 dark:text-danger-400"></i>
+                            </x-camelui::link>
+                            <x-camelui::modal wire="remove">
+                                <x-camelui::heading size="md">
+                                    هل تريد حذف طلب السلفة ؟، هذا الإجراء لا يمكن التراجع عنه
+                                </x-camelui::heading>
+                                <div class="flex flex-col justify-between w-full mt-3">
+                                    <form wire:submit="deleteAdvancePayment({{ $advancePayment->id }})">
+                                        <x-camelui::button style="danger" class="py-2" icon="fa-solid fa-trash"
+                                                           wire:target="deleteAdvancePayment"
+                                                           x-on:click="setTimeout(() => { remove = false; }, 950)">
+                                            حذف
+                                        </x-camelui::button>
+                                    </form>
+                                </div>
+                            </x-camelui::modal>
+                            <!-- Delete modal -->
 
+                            @if($advancePayment->status === 'requested')
                                 <!-- Update modal -->
-                                <x-camelui::link x-on:click="update = ! update;$wire.setToUpdate({{$advancePayment->id}})">
-                                    <i class="text-xl cursor-pointer fa-solid fa-edit text-teal-700 dark:text-teal-400"></i>
+                                <x-camelui::link
+                                    x-on:click="update = ! update;$wire.setToUpdate({{$advancePayment->id}})">
+                                    <i class="text-xl cursor-pointer fa-solid fa-edit text-yellow-700 dark:text-yellow-400"></i>
                                 </x-camelui::link>
                                 <x-camelui::modal wire="update">
                                     <div x-data="{ vacation: true }" x-on:update.window="update = false">
@@ -217,9 +176,11 @@
                                                                           icon="" required="true"/>
                                                     </div>
                                                     <div class="relative w-full mb-3">
-                                                        <x-camelui::input label="{{ trans('app.advance-payment-value') }}" type="number"
-                                                                          placeholder="" wire="amount"
-                                                                          icon="" required="true"/>
+                                                        <x-camelui::input
+                                                            label="{{ trans('app.advance-payment-value') }}"
+                                                            type="number"
+                                                            placeholder="" wire="amount"
+                                                            icon="" required="true"/>
                                                     </div>
                                                     <div class="w-full mt-4">
                                                         <x-camelui::button class="py-3.5" color="primary"
@@ -234,6 +195,12 @@
                                     </div>
                                 </x-camelui::modal>
                                 <!-- Update modal -->
+
+                                <x-camelui::button style="success" class="py-1 text-sm" icon="fa-solid fa-check"
+                                                   wire:click="approveAdvancePayment({{ $advancePayment->id }})"
+                                                   wire:target="approveAdvancePayment({{ $advancePayment->id }})">
+                                    موافقة
+                                </x-camelui::button>
                             @endif
                         </td>
 
@@ -246,4 +213,5 @@
             </div>
         @endif
     </div>
+
 </div>
