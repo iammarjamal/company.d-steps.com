@@ -8,6 +8,7 @@ class Index extends Component
 {
     public function render()
     {
-        return view('pages.admin.pages.index.pages.index');
+        return view('pages.admin.pages.index.pages.index')
+            ->layout('pages.admin.layouts.layout');
     }
 }

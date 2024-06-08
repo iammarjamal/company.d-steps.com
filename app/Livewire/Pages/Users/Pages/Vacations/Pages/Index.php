@@ -143,7 +143,7 @@ class Index extends Component
         return view('pages.users.pages.vacations.pages.index' , [
             'vacations' => $vacations ,
             'count' => $count,])
-            ->layout('pages.dashboard.layouts.layout')
+            ->layout('pages.users.layouts.layout')
             ->title(trans('dashboard.navbar.title.vacation'));
     }
 }

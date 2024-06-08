@@ -44,56 +44,55 @@
                             </li>
 
                             <a
-                                class="{{ Route::currentRouteName() === 'hr.index' ? 'bg-zinc-200 dark:bg-zinc-800 bg-opacity-25' : '' }} flex items-center px-4 py-2 mx-2 mt-1 rounded-md hover:bg-zinc-200 dark:hover:bg-zinc-800 hover:bg-opacity-25 text-zinc-900 dark:text-zinc-100 cursor-pointer"
-                                x-on:click="Sidebar = window.innerWidth <= 1024 ? false : true; setTimeout(() => { Livewire.navigate('{{ route('hr.index') }}') }, 350)"
+                                class="{{ Route::currentRouteName() === 'user.index' ? 'bg-zinc-200 dark:bg-zinc-800 bg-opacity-25' : '' }} flex items-center px-4 py-2 mx-2 mt-1 rounded-md hover:bg-zinc-200 dark:hover:bg-zinc-800 hover:bg-opacity-25 text-zinc-900 dark:text-zinc-100 cursor-pointer"
+                                x-on:click="Sidebar = window.innerWidth <= 1024 ? false : true; setTimeout(() => { Livewire.navigate('{{ route('user.index') }}') }, 350)"
                             >
-                                <i class="inline-flex text-xl flex-inline {{ Route::currentRouteName() === 'hr.index' ? 'bx bxs-home' : 'bx bx-home' }}"></i>
+                                <i class="inline-flex text-xl flex-inline {{ Route::currentRouteName() === 'user.index' ? 'bx bxs-home' : 'bx bx-home' }}"></i>
                                 <p class="mx-3 text-lg">{{ trans('app.dashboard.navbar.index') }}</p>
                             </a>
                         </div>
                         <!-- General -->
 
-                        <!-- Notifications -->
-                        <div class="mb-3">
-                            <li class="flex items-start mx-4 mt-2 mb-0">
+                            <!-- Notifications -->
+                            <div class="mb-3">
+                                <li class="flex items-start mx-4 mt-2 mb-0">
                                 <span
                                     class="text-xs text-indigo-600 dark:text-indigo-400">{{ trans('app.dashboard.navbar.title.activity') }}</span>
-                            </li>
+                                </li>
 
-                            <a
-                                class="{{ Route::currentRouteName() === 'hr.notifications.manage' ? 'bg-zinc-200 dark:bg-zinc-800 bg-opacity-25' : '' }} flex items-center px-4 py-2 mx-2 mt-1 rounded-md hover:bg-zinc-200 dark:hover:bg-zinc-800 hover:bg-opacity-25 text-zinc-900 dark:text-zinc-100 cursor-pointer"
-                                x-on:click="Sidebar = window.innerWidth <= 1024 ? false : true; setTimeout(() => { Livewire.navigate('{{ route('hr.notifications.manage') }}') }, 350)"
-                            >
-                                <i class="inline-flex text-xl flex-inline {{ Route::currentRouteName() === 'hr.notifications.manage' ? 'bx bxs-bell' : 'bx bx-bell' }}"></i>
-                                <p class="mx-3 text-lg">{{ trans('app.dashboard.navbar.title.notifications') }}</p>
-                            </a>
-                        </div>
-                        <!-- Notifications -->
+                                <a
+                                    class="{{ Route::currentRouteName() === 'user.notifications.manage' ? 'bg-zinc-200 dark:bg-zinc-800 bg-opacity-25' : '' }} flex items-center px-4 py-2 mx-2 mt-1 rounded-md hover:bg-zinc-200 dark:hover:bg-zinc-800 hover:bg-opacity-25 text-zinc-900 dark:text-zinc-100 cursor-pointer"
+                                    x-on:click="Sidebar = window.innerWidth <= 1024 ? false : true; setTimeout(() => { Livewire.navigate('{{ route('user.notifications.manage') }}') }, 350)"
+                                >
+                                    <i class="inline-flex text-xl flex-inline {{ Route::currentRouteName() === 'user.notifications.manage' ? 'bx bxs-bell' : 'bx bx-bell' }}"></i>
+                                    <p class="mx-3 text-lg">{{ trans('app.dashboard.navbar.title.notifications') }}</p>
+                                </a>
+                            </div>
+                            <!-- Notifications -->
 
-                        <!-- Requests -->
-                        <div class="mb-3">
-                            <li class="flex items-start mx-4 mt-2 mb-0">
+                            <!-- Requests -->
+                            <div class="mb-3">
+                                <li class="flex items-start mx-4 mt-2 mb-0">
                                 <span
                                     class="text-xs text-indigo-600 dark:text-indigo-400">{{ trans('app.dashboard.navbar.title.requests') }}</span>
-                            </li>
+                                </li>
 
-                            <a
-                                class="{{ Route::currentRouteName() === 'hr.requests.vacation' ? 'bg-zinc-200 dark:bg-zinc-800 bg-opacity-25' : '' }} flex items-center px-4 py-2 mx-2 mt-1 rounded-md hover:bg-zinc-200 dark:hover:bg-zinc-800 hover:bg-opacity-25 text-zinc-900 dark:text-zinc-100 cursor-pointer"
-                                x-on:click="Sidebar = window.innerWidth <= 1024 ? false : true; setTimeout(() => { Livewire.navigate('{{ route('hr.requests.vacation') }}') }, 350)"
-                            >
-                                <i class="inline-flex text-xl flex-inline {{ Route::currentRouteName() === 'hr.requests.vacation' ? 'fa-solid fa-calendar' : 'fa-regular fa-calendar' }}"></i>
-                                <p class="mx-3 text-lg">{{ trans('app.dashboard.navbar.title.vacation') }}</p>
-                            </a>
-                            <a
-                                class="{{ Route::currentRouteName() === 'hr.requests.advance-payments' ? 'bg-zinc-200 dark:bg-zinc-800 bg-opacity-25' : '' }} flex items-center px-4 py-2 mx-2 mt-1 rounded-md hover:bg-zinc-200 dark:hover:bg-zinc-800 hover:bg-opacity-25 text-zinc-900 dark:text-zinc-100 cursor-pointer"
-                                x-on:click="Sidebar = window.innerWidth <= 1024 ? false : true; setTimeout(() => { Livewire.navigate('{{ route('hr.requests.advance-payments') }}') }, 350)"
-                            >
-                                <i class="inline-flex text-xl flex-inline {{ Route::currentRouteName() === 'hr.requests.advance-payments' ? 'fas fa-money-bill-alt' : 'far fa-money-bill-alt' }}"></i>
-                                <p class="mx-3 text-lg">{{ trans('app.dashboard.navbar.title.advance-payment') }}</p>
-                            </a>
-                        </div>
-                        <!-- Requests -->
-
+                                <a
+                                    class="{{ Route::currentRouteName() === 'user.requests.vacation' ? 'bg-zinc-200 dark:bg-zinc-800 bg-opacity-25' : '' }} flex items-center px-4 py-2 mx-2 mt-1 rounded-md hover:bg-zinc-200 dark:hover:bg-zinc-800 hover:bg-opacity-25 text-zinc-900 dark:text-zinc-100 cursor-pointer"
+                                    x-on:click="Sidebar = window.innerWidth <= 1024 ? false : true; setTimeout(() => { Livewire.navigate('{{ route('user.requests.vacation') }}') }, 350)"
+                                >
+                                    <i class="inline-flex text-xl flex-inline {{ Route::currentRouteName() === 'user.requests.vacation' ? 'fa-solid fa-calendar' : 'fa-regular fa-calendar' }}"></i>
+                                    <p class="mx-3 text-lg">{{ trans('app.dashboard.navbar.title.vacation') }}</p>
+                                </a>
+                                <a
+                                    class="{{ Route::currentRouteName() === 'user.requests.advance-payments' ? 'bg-zinc-200 dark:bg-zinc-800 bg-opacity-25' : '' }} flex items-center px-4 py-2 mx-2 mt-1 rounded-md hover:bg-zinc-200 dark:hover:bg-zinc-800 hover:bg-opacity-25 text-zinc-900 dark:text-zinc-100 cursor-pointer"
+                                    x-on:click="Sidebar = window.innerWidth <= 1024 ? false : true; setTimeout(() => { Livewire.navigate('{{ route('user.requests.advance-payments') }}') }, 350)"
+                                >
+                                    <i class="inline-flex text-xl flex-inline {{ Route::currentRouteName() === 'user.requests.advance-payments' ? 'fas fa-money-bill-alt' : 'far fa-money-bill-alt' }}"></i>
+                                    <p class="mx-3 text-lg">{{ trans('app.dashboard.navbar.title.advance-payment') }}</p>
+                                </a>
+                            </div>
+                            <!-- Requests -->
                     </div>
                 </nav>
             </aside>
@@ -152,7 +151,7 @@
 
     </div>
     <script>
-        window.addEventListener('DOMContentLoaded', function () {
+        window.addEventListener('DOMContentLoaded' ,function () {
             const id = {{auth()->user()->id}}
             window.Echo.private(`App.Models.User.${id}`)
                 .listen('UserNotificationSent', (e) => {

@@ -25,8 +25,16 @@
                                 <x-camelui::link class="py-2.5" href="{{ route('auth.login') }}" icon="fa-solid fa-user" wire:navigate button>
                                     <span class="">{{ trans('app.auth.login.title') }}</span>
                                 </x-camelui::link>
-                            @else
-                                <x-camelui::link href="{{ route('dashboard.index') }}" class="relative block w-10 h-10 overflow-hidden border-2 rounded-full shadow border-zinc-200 dark:border-zinc-700 focus:outline-none" wire:navigate>
+                            @elseif(\Illuminate\Support\Facades\Auth::user()->hasRole(\App\Enums\Role::Admin))
+                                <x-camelui::link href="{{ route('admin.index') }}" class="relative block w-10 h-10 overflow-hidden border-2 rounded-full shadow border-zinc-200 dark:border-zinc-700 focus:outline-none" wire:navigate>
+                                    <x-camelui::avatar />
+                                </x-camelui::link>
+                            @elseif(\Illuminate\Support\Facades\Auth::user()->hasRole(\App\Enums\Role::HR))
+                                <x-camelui::link href="{{ route('hr.index') }}" class="relative block w-10 h-10 overflow-hidden border-2 rounded-full shadow border-zinc-200 dark:border-zinc-700 focus:outline-none" wire:navigate>
+                                    <x-camelui::avatar />
+                                </x-camelui::link>
+                            @elseif(\Illuminate\Support\Facades\Auth::user()->hasRole(\App\Enums\Role::User))
+                                <x-camelui::link href="{{ route('user.index') }}" class="relative block w-10 h-10 overflow-hidden border-2 rounded-full shadow border-zinc-200 dark:border-zinc-700 focus:outline-none" wire:navigate>
                                     <x-camelui::avatar />
                                 </x-camelui::link>
                             @endif
@@ -112,8 +120,16 @@
                                             <x-camelui::link class="py-2.5" href="{{ route('auth.login') }}" icon="fa-solid fa-user" wire:navigate button>
                                                 <span class="">{{ trans('app.auth.login.title') }}</span>
                                             </x-camelui::link>
-                                        @else
-                                            <x-camelui::link href="{{ route('dashboard.index') }}" class="relative block w-10 h-10 overflow-hidden border-2 rounded-full shadow border-zinc-200 dark:border-zinc-700 focus:outline-none" wire:navigate>
+                                        @elseif(\Illuminate\Support\Facades\Auth::user()->hasRole(\App\Enums\Role::Admin))
+                                            <x-camelui::link href="{{ route('admin.index') }}" class="relative block w-10 h-10 overflow-hidden border-2 rounded-full shadow border-zinc-200 dark:border-zinc-700 focus:outline-none" wire:navigate>
+                                                <x-camelui::avatar />
+                                            </x-camelui::link>
+                                        @elseif(\Illuminate\Support\Facades\Auth::user()->hasRole(\App\Enums\Role::HR))
+                                            <x-camelui::link href="{{ route('hr.index') }}" class="relative block w-10 h-10 overflow-hidden border-2 rounded-full shadow border-zinc-200 dark:border-zinc-700 focus:outline-none" wire:navigate>
+                                                <x-camelui::avatar />
+                                            </x-camelui::link>
+                                        @elseif(\Illuminate\Support\Facades\Auth::user()->hasRole(\App\Enums\Role::User))
+                                            <x-camelui::link href="{{ route('user.index') }}" class="relative block w-10 h-10 overflow-hidden border-2 rounded-full shadow border-zinc-200 dark:border-zinc-700 focus:outline-none" wire:navigate>
                                                 <x-camelui::avatar />
                                             </x-camelui::link>
                                         @endif

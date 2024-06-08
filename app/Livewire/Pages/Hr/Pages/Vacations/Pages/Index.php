@@ -122,7 +122,7 @@ class Index extends Component
             'vacations' => $vacations,
             'count' => $count,
         ])
-            ->layout('pages.dashboard.layouts.layout')
+            ->layout('pages.hr.layouts.layout')
             ->title(trans('dashboard.navbar.title.vacation'));
     }
 }

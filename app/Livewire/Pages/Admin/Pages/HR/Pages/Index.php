@@ -90,7 +90,7 @@ class Index extends Component
             'users' => $users,
             'count' => $count,
         ])
-            ->layout('pages.dashboard.layouts.layout')
+            ->layout('pages.admin.layouts.layout')
             ->title(trans('app.dashboard.index.title'));
     }
 

@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Pages\Auth\Pages\Register\Pages;
 
+use App\Enums\Role;
 use App\Models\User;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -29,24 +30,22 @@ class Index extends Component
             'username' => $this->username,
             'email' => $this->email,
             'password' => Hash::make($this->password),
-
-            // Role
-            'role' => 'user',
-
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ]);
 
+        $user->assignRole(Role::User);
+
         // Login User
         Auth::login($user, true);
 
-        $this->redirect(route('dashboard.index'), navigate: true);
+        $this->redirect(route('user.index'), navigate: true);
     }
 
     public function render()
     {
         return view('pages.auth.pages.register.pages.index')
-        ->layout('pages.auth.layouts.layout') 
+        ->layout('pages.auth.layouts.layout')
         ->title(trans('app.auth.register.title'));
     }
 }

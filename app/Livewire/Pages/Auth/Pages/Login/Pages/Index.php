@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Pages\Auth\Pages\Login\Pages;
 
+use App\Enums\Role;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
@@ -22,18 +23,28 @@ class Index extends Component
 
         // Check
         $check = Auth::attempt(
-            array('email'=> $this->email, 'password' => $this->password), 
+            array('email'=> $this->email, 'password' => $this->password),
             $this->remember_me
         );
 
         // Success
         if($check == true){
-            $this->redirect(route('dashboard.index'), navigate: true);
+            $route = '';
+            if(auth()->user()->hasRole(Role::Admin)){
+                $route = 'admin.index';
+            }
+            else if(auth()->user()->hasRole(Role::HR)){
+                $route = 'hr.index';
+            }
+            else{
+                $route = 'user.index';
+            }
+            $this->redirect(route($route), navigate: true);
         }
 
         // Error
         else{
-            $this->addError('email', trans('auth.password')); 
+            $this->addError('email', trans('auth.password'));
             $this->reset('password');
         }
     }

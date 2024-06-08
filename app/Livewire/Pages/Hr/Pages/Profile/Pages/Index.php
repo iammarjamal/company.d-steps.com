@@ -73,7 +73,7 @@ class Index extends Component
         $this->phone = Auth::user()->phone;
 
         return view('pages.hr.pages.profile.pages.index')
-            ->layout('pages.dashboard.layouts.layout')
+            ->layout('pages.hr.layouts.layout')
             ->title(trans('app.dashboard.profile.title'));
     }
 }

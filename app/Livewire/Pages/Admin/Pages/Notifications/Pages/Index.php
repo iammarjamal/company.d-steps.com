@@ -15,7 +15,7 @@ class Index extends Component
     public function render()
     {
         return view('pages.admin.pages.notifications.pages.index')
-            ->layout('pages.dashboard.layouts.layout')
+            ->layout('pages.admin.layouts.layout')
             ->title(trans('app.dashboard.profile.title'));
     }
 }
