@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Pages\Dashboard\Pages\Notifications\Pages;
+namespace App\Livewire\Pages\Admin\Pages\Notifications\Pages;
 
 use App\Models\Notification;
 use Illuminate\Support\Facades\Auth;
@@ -24,11 +24,13 @@ class Inbox extends Component
     }
 
     #[On('notify')]
+    #[On('reverb_notification_sent')]
+    #[On('reverb_notification_deleted')]
     public function render()
     {
 //        $notifications = Notification::where('to', Auth::id())->orderBy('created_at', 'DESC')->paginate(10);
 
-        $notificationsQuery = Notification::orderBy('created_at', 'DESC');
+        $notificationsQuery = Notification::where('to', Auth::id())->orderBy('created_at', 'DESC');
 
         if ($this->search) {
             $notificationsQuery->where('to', 'like', '%' . $this->search . '%')
@@ -38,6 +40,6 @@ class Inbox extends Component
 
         $notifications = $notificationsQuery->paginate(10);
 
-        return view('pages.dashboard.pages.notifications.pages.inbox' ,['notifications' => $notifications]);
+        return view('pages.admin.pages.notifications.pages.inbox' ,['notifications' => $notifications]);
     }
 }

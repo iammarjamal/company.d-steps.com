@@ -9,4 +9,6 @@ enum Permission: string
     case ManageHR = 'manage hr';
     case ManageUsers = 'manage users';
     case ManageNotifications = 'manage notifications';
+    case ManageAdvancePayments = 'manage advance payments';
+    case ManageVacations = 'manage vacations';
 }

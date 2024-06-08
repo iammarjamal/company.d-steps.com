@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Pages\Dashboard\Pages\Notifications\Pages;
+namespace App\Livewire\Pages\Admin\Pages\Notifications\Pages;
 
 use App\Events\UserNotificationDeleted;
 use App\Events\UserNotificationSent;
@@ -14,7 +14,7 @@ class Index extends Component
 {
     public function render()
     {
-        return view('pages.dashboard.pages.notifications.pages.index')
+        return view('pages.admin.pages.notifications.pages.index')
             ->layout('pages.dashboard.layouts.layout')
             ->title(trans('app.dashboard.profile.title'));
     }

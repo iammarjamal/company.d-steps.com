@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Pages\Dashboard\Pages\Notifications\Pages;
+namespace App\Livewire\Pages\Users\Pages\Notifications\Pages;
 
 use App\Events\UserNotificationSent;
 use App\Jobs\SendNotificationsToUsers;
@@ -72,6 +72,6 @@ class Create extends Component
     public function render()
     {
         $this->targetUsers  = User::whereIn('id' , $this->tags)->get();
-        return view('pages.dashboard.pages.notifications.pages.create');
+        return view('pages.users.pages.notifications.pages.create');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Pages\Dashboard\Pages\Notifications\Pages;
+namespace App\Livewire\Pages\Admin\Pages\Notifications\Pages;
 
 use App\Events\UserNotificationDeleted;
 use App\Models\Notification;
@@ -51,7 +51,7 @@ class Sent extends Component
     {
 //        $notifications = Notification::where('from', Auth::id())->orderBy('created_at', 'DESC')->paginate(10);
 
-        $notificationsQuery = Notification::orderBy('created_at', 'DESC');
+        $notificationsQuery = Notification::where('from', Auth::id())->orderBy('created_at', 'DESC');
 
         if ($this->search) {
             $notificationsQuery->where('to', 'like', '%' . $this->search . '%')
@@ -61,7 +61,7 @@ class Sent extends Component
 
         $notifications = $notificationsQuery->paginate(10);
 
-        return view('pages.dashboard.pages.notifications.pages.sent' , [
+        return view('pages.admin.pages.notifications.pages.sent' , [
             'notifications' => $notifications
             ]);
     }

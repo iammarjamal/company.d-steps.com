@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Pages\Dashboard\Pages\Profile\Pages;
+namespace App\Livewire\Pages\Users\Pages\Profile\Pages;
 
 use App\Models\User;
 use Illuminate\Support\Carbon;
@@ -72,7 +72,7 @@ class Index extends Component
         $this->email = Auth::user()->email;
         $this->phone = Auth::user()->phone;
 
-        return view('pages.dashboard.pages.profile.pages.index')
+        return view('pages.users.pages.profile.pages.index')
             ->layout('pages.dashboard.layouts.layout')
             ->title(trans('app.dashboard.profile.title'));
     }
