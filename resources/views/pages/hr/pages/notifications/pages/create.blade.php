@@ -31,7 +31,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
             <div class="mt-0">
                 <label for="users"
-                       class="block text-sm font-medium text-gray-700">{{ trans('app.notifications.users') }}</label>
+                       class="block text-sm font-medium text-gray-700"><x-camelui::paragraph>{{ trans('app.notifications.users') }}</x-camelui::paragraph></label>
                 <div class="relative" id="users" x-data="{ open: false , searching : false }"
                      x-on:select-contact.window="open = true; searching = false">
                     <input
@@ -39,7 +39,7 @@
                         @click.outside="open = false"
                         {{--                        @keydown.enter="$wire.selectContact(),open = true"--}}
                         type="text"
-                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-lg p-2.5"
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-xl p-2.5 text-zinc-500 dark:text-zinc-400"
                         placeholder="اختر مستخدم"
                         wire:model="query"
                         {{--                        wire:keyup.debounce.100ms="selectContact; searching = true"--}}
@@ -48,7 +48,7 @@
                     />
 
                     <div x-show="searching" class="absolute z-10 w-full bg-white rounded-t-none shadow-lg list-group">
-                        <div class="p-8 font-bold bg-gray-50">جاري البحث...</div>
+                        <div class="p-8 font-bold bg-gray-50"><x-camelui::paragraph>جاري البحث...</x-camelui::paragraph></div>
                     </div>
 
                     {{--                    @if(!empty($query))--}}
@@ -59,10 +59,10 @@
                             <a
                                 wire:click.prevent="createTag({{$user->id}}); searching = false"
                                 class="block cursor-pointer py-6 px-8 font-bold hover:bg-gray-100 "
-                            >{{ $user->username }}</a>
+                            ><x-camelui::paragraph>{{ $user->username }}</x-camelui::paragraph></a>
                         @empty
 
-                            <div class="block p-8 font-bold bg-gray-50">لا يوجد نتائج!</div>
+                            <div class="block p-8 font-bold bg-gray-50"><x-camelui::paragraph>لا يوجد نتائج!</x-camelui::paragraph></div>
                         @endforelse
                     </div>
                     {{--                    @endif--}}
@@ -99,7 +99,7 @@
 {{--            </div>--}}
             <div class="mt-0">
                 <label for="title"
-                       class="block text-sm font-medium text-gray-700">{{ trans('app.notifications.title') }}</label>
+                       class="block text-sm font-medium text-gray-700"><x-camelui::paragraph>{{ trans('app.notifications.title') }}</x-camelui::paragraph></label>
                 <input type="text" id="title" name="title" wire:model="title"
                        placeholder="{{ trans('app.notifications.title') }}"
                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-lg p-2.5">
@@ -109,7 +109,7 @@
             </div>
             <div class="mt-0">
                 <label for="body"
-                       class="block text-sm font-medium text-gray-700">{{ trans('app.notifications.body') }}</label>
+                       class="block text-sm font-medium text-gray-700"><x-camelui::paragraph>{{ trans('app.notifications.body') }}</x-camelui::paragraph></label>
                 <textarea id="content" name="content" wire:model="content"
                           placeholder="{{ trans('app.notifications.body') }}"
                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-lg p-2.5"></textarea>

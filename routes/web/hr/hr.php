@@ -4,6 +4,7 @@ use App\Enums\Permission;
 use App\Enums\Role;
 use App\Livewire\Pages\Hr\Pages\Index\Pages\Index as HRIndex;
 use App\Livewire\Pages\Hr\Pages\Profile\Pages\Index as ProfileIndex;
+use App\Livewire\Pages\Hr\Pages\Users\Pages\Index as UsersIndex;
 use App\Livewire\Pages\Hr\Pages\Notifications\Pages\Index as NotificationsIndex;
 use App\Livewire\Pages\Hr\Pages\Vacations\Pages\Index as VacationIndex;
 use App\Livewire\Pages\Hr\Pages\AdvancePayments\Pages\Index as AdvancePaymentsIndex;
@@ -13,6 +14,10 @@ Route::prefix('hr')->name('hr.')->middleware(['auth' , 'role:'. Role::HR->value]
     Route::get('/', HRIndex::class)->name('index');
 
     Route::get('/profile', ProfileIndex::class)->name('profile');
+
+    Route::prefix('users')->name('users.')->middleware('permission:'. Permission::ManageUsers->value)->group(function(){
+        Route::get('/', UsersIndex::class)->name('index');
+    });
 
     Route::prefix('notifications')->name('notifications.')->middleware('permission:'. Permission::ManageNotifications->value)->group(function(){
         Route::get('/manage', NotificationsIndex::class)->name('manage');

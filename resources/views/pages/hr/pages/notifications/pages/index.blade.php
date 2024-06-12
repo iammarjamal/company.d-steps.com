@@ -7,13 +7,11 @@
                 <button @click="selectedTab = 'inbox'" :aria-selected="selectedTab === 'inbox'" :tabindex="selectedTab === 'inbox' ? '0' : '-1'" :class="selectedTab === 'inbox' ? 'font-bold text-blue-700 border-b-2 border-blue-700 dark:border-blue-600 dark:text-blue-600' : 'text-slate-700 font-medium dark:text-slate-300 dark:hover:border-b-slate-300 dark:hover:text-white hover:border-b-2 hover:border-b-slate-800 hover:text-black'" class="h-min px-4 py-2 text-sm" type="button" role="tab" aria-controls="inbox" >{{__('app.notifications.inbox')}}</button>
              </div>
             <div class="px-2 py-4 text-slate-700 dark:text-slate-300">
-                <div x-show="selectedTab === 'create'" id="create" role="tabpanel" aria-label="create">  <div><livewire:pages.hr.pages.notifications.pages.create/></div> </div>
-                <div x-show="selectedTab === 'sent'" id="sent" role="tabpanel" aria-label="sent"> <div><livewire:pages.hr.pages.notifications.pages.sent/></div> </div>
-                <div x-show="selectedTab === 'inbox'" id="inbox" role="tabpanel" aria-label="inbox"> <div><livewire:pages.hr.pages.notifications.pages.inbox/></div> </div>
+                <div x-show="selectedTab === 'create'" id="create" role="tabpanel" aria-label="create">  <div><livewire:pages.admin.pages.notifications.pages.create/></div> </div>
+                <div x-show="selectedTab === 'sent'" id="sent" role="tabpanel" aria-label="sent"> <div><livewire:pages.admin.pages.notifications.pages.sent/></div> </div>
+                <div x-show="selectedTab === 'inbox'" id="inbox" role="tabpanel" aria-label="inbox"> <div><livewire:pages.admin.pages.notifications.pages.inbox/></div> </div>
             </div>
         </div>
-
-
 
     </div>
 </div>

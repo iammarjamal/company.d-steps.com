@@ -28,6 +28,7 @@ class RolesAndPermissionsSeeder extends Seeder
 
         $hrRole = Role::findByName(RoleEnum::HR->value);
         $hrRole->givePermissionTo([PermissionEnum::DashboardAccess
+            , PermissionEnum::ManageUsers
             , PermissionEnum::ManageNotifications
             , PermissionEnum::ManageAdvancePayments
             , PermissionEnum::ManageVacations

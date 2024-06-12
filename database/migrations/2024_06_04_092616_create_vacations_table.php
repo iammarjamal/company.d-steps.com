@@ -21,6 +21,7 @@ return new class extends Migration
             $table->dateTime('approved_at')->nullable();
             $table->enum('status', ['approved' , 'requested'])->default('requested');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

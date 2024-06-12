@@ -34,19 +34,19 @@
                 <thead
                     class="border-b border-slate-300 bg-slate-100 text-sm text-black dark:border-slate-700 dark:bg-slate-800 dark:text-white">
                 <tr>
-                    <th scope="col" class="p-4">المرسل</th>
-                    <th scope="col" class="p-4">العنوان</th>
-                    <th scope="col" class="p-4">النص</th>
-                    <th scope="col" class="p-4">التاريخ</th>
+                    <th scope="col" class="p-4"><x-camelui::paragraph>المرسل</x-camelui::paragraph></th>
+                    <th scope="col" class="p-4"><x-camelui::paragraph>العنوان</x-camelui::paragraph></th>
+                    <th scope="col" class="p-4"><x-camelui::paragraph>النص</x-camelui::paragraph></th>
+                    <th scope="col" class="p-4"><x-camelui::paragraph>التاريخ</x-camelui::paragraph></th>
                 </tr>
                 </thead>
                 <tbody class="divide-y divide-slate-300 dark:divide-slate-700">
                 @foreach($notifications as $notification)
                     <tr>
-                        <td class="p-4">{{ $notification->sender->username }}</td>
-                        <td class="p-4">{{ $notification->title }}</td>
-                        <td class="p-4">{{ $notification->content }}</td>
-                        <td class="p-4">{{ $notification->created_at->format('Y-m-d H:i') }}</td>
+                        <td class="p-4"> <x-camelui::paragraph>{{ $notification->sender->username }}</x-camelui::paragraph> </td>
+                        <td class="p-4"><x-camelui::paragraph>{{ $notification->title }}</x-camelui::paragraph></td>
+                        <td class="p-4"><x-camelui::paragraph>{{ $notification->content }}</x-camelui::paragraph></td>
+                        <td class="p-4"><x-camelui::paragraph>{{ $notification->created_at->format('Y-m-d H:i') }}</x-camelui::paragraph></td>
                     </tr>
                 @endforeach
                 </tbody>

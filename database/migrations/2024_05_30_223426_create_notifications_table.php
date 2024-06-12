@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('content')->nullable();
             $table->enum('status', ['read' , 'unread'])->default('unread');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

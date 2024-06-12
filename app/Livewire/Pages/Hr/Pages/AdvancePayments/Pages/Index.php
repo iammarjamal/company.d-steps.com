@@ -68,6 +68,9 @@ class Index extends Component
         $this->search = '';
         $this->created_at = '';
         $this->approved_at = '';
+
+        // Close Sidebar
+        $this->dispatch('filters');
     }
 
     public function update($id)

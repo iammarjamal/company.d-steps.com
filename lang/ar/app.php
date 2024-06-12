@@ -56,6 +56,8 @@ return [
     'requested' => 'طلب حالي',
     'approved' => 'موافق عليه',
     'all' => 'الكل',
+    'all.advance-payments' => 'طلبات السلفة',
+    'all.vacations' => 'طلبات الإجازة',
 
     'more' => 'عرض المزيد',
     'edit' => 'تعديل',

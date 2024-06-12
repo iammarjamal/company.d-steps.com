@@ -47,6 +47,8 @@ class Index extends Component
         $this->search = '';
         $this->created_at = '';
         $this->approved_at = '';
+
+        $this->dispatch('filters');
     }
 
     public function filters()

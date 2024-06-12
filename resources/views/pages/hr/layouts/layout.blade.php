@@ -53,6 +53,24 @@
                         </div>
                         <!-- General -->
 
+                        <!-- Users -->
+                        <div class="mb-3">
+                            <li class="flex items-start mx-4 mt-2 mb-0">
+                                    <span
+                                        class="text-xs text-indigo-600 dark:text-indigo-400">{{ trans('app.dashboard.navbar.title.users') }}</span>
+                            </li>
+
+                            <a
+                                class="{{ Route::currentRouteName() === 'hr.users.index' ? 'bg-zinc-200 dark:bg-zinc-800 bg-opacity-25' : '' }} flex items-center px-4 py-2 mx-2 mt-1 rounded-md hover:bg-zinc-200 dark:hover:bg-zinc-800 hover:bg-opacity-25 text-zinc-900 dark:text-zinc-100 cursor-pointer"
+                                x-on:click="Sidebar = window.innerWidth <= 1024 ? false : true; setTimeout(() => { Livewire.navigate('{{ route('hr.users.index') }}') }, 350)"
+                            >
+                                <i class="inline-flex text-xl flex-inline {{ Route::currentRouteName() === 'hr.users.index' ? 'bx bxs-group' : 'bx bx-group' }}"></i>
+                                <p class="mx-3 text-lg">{{ trans('app.dashboard.users.index') }}</p>
+                            </a>
+
+                        </div>
+                        <!-- Users -->
+
                         <!-- Notifications -->
                         <div class="mb-3">
                             <li class="flex items-start mx-4 mt-2 mb-0">

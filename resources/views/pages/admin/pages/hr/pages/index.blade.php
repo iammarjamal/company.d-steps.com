@@ -9,7 +9,7 @@
             </x-camelui::button>
             <x-camelui::modal wire="popup">
                 <div x-data="{ user: true }" x-on:save.window="popup = false">
-                    <!-- First Step -->
+                    <!-- create -->
                     <div
                         x-show="user"
                         x-transition:enter="transition-all duration-500"
@@ -17,7 +17,6 @@
                         x-transition:enter-end="opacity-100 transform origin-center"
                         x-data="{ select: false }"
                     >
-
 
                         <!-- User -->
                         <div class="flex justify-center mb-6" x-show="user">
@@ -33,16 +32,10 @@
                                                       icon="fa-solid fa-envelope" required="true"/>
                                 </div>
                                 <div class="relative w-full mb-3">
-                                    <x-camelui::input label="{{ trans('app.user.password') }}" type="password"
-                                                      placeholder="{{ trans('app.user.password') }}" wire="password"
-                                                      icon="fa-solid fa-lock" required="true"/>
+                                    <x-camelui::password label="{{ trans('app.user.password') }}" placeholder="{{ trans('app.user.password') }}" wire="password" required="true" />
                                 </div>
                                 <div class="relative w-full mb-3">
-                                    <x-camelui::input label="{{ trans('app.user.password_confirmation') }}"
-                                                      type="password"
-                                                      placeholder="{{ trans('app.user.password_confirmation') }}"
-                                                      wire="password_confirmation" icon="fa-solid fa-lock"
-                                                      required="true"/>
+                                    <x-camelui::password label="{{ trans('app.user.password_confirmation') }}" placeholder="{{ trans('app.user.password_confirmation') }}" wire="password_confirmation" required="true" />
                                 </div>
                                 <div class="w-full mt-4">
                                     <x-camelui::button class="py-3.5" color="primary" icon="fa-solid fa-plus"
