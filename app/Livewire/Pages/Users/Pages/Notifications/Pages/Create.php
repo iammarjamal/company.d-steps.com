@@ -53,17 +53,11 @@ class Create extends Component
             'content' => 'required|string',
         ]);
 
-        $notifications = [];
-        foreach ($this->targetUsers as $targetUser){
-            $notifications[] =   Notification::create([
-                'from' => Auth::user()->id,
-                'to' => $targetUser->id,
-                'title' => $this->title,
-                'content' => $this->content
-            ]);
-        }
 
-        SendNotificationsToUsers::dispatch($notifications);
+        $users = $this->targetUsers->pluck('id')->toArray();
+        SendNotificationsToUsers::dispatch($users , Auth::user()->id , $this->title , $this->content);
+
+
         $this->reset(['targetUsers', 'title', 'content' , 'tags']);
         $this->dispatch('notification_created');
         session()->flash('success', 'تم إرسال الإشعار');

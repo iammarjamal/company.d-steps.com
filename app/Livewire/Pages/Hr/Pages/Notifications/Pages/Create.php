@@ -17,6 +17,8 @@ class Create extends Component
     public $query;
     public $tags = [];
     public $targetUsers = [];
+    public $typeOfNotification = 'private';
+
 
     public function mount()
     {
@@ -48,22 +50,19 @@ class Create extends Component
     public function send()
     {
         $this->validate([
-            'targetUsers' => 'required|array',
+            'targetUsers' => 'sometimes|array',
             'title' => 'required|string',
             'content' => 'required|string',
         ]);
 
-        $notifications = [];
-        foreach ($this->targetUsers as $targetUser){
-            $notifications[] =   Notification::create([
-                'from' => Auth::user()->id,
-                'to' => $targetUser->id,
-                'title' => $this->title,
-                'content' => $this->content
-            ]);
+        if($this->typeOfNotification === 'private'){
+            $users = $this->targetUsers->pluck('id')->toArray();
+            SendNotificationsToUsers::dispatch($users , Auth::user()->id , $this->title , $this->content);
+        }else {
+            $users = $this->users->pluck('id')->toArray();
+            SendNotificationsToUsers::dispatch($users, Auth::user()->id , $this->title , $this->content);
         }
 
-        SendNotificationsToUsers::dispatch($notifications);
         $this->reset(['targetUsers', 'title', 'content' , 'tags']);
         $this->dispatch('notification_created');
         session()->flash('success', 'تم إرسال الإشعار');

@@ -38,6 +38,9 @@ return [
     'notifications.new' => 'إشعار جديد',
     'notifications.sent' => 'الإشعارات المرسلة',
     'notifications.inbox' => 'الإشعارات الواردة',
+    'notifications.type' => 'نوع الإشعار',
+    'notifications.private' => 'إشعار خاص',
+    'notifications.general' => 'إشعار عام',
     'send' => 'أرسل',
 
     'cost' => 'التكلفة',
