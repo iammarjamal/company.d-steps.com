@@ -62,4 +62,11 @@ class User extends Authenticatable
     public function advancePayments(){
         return $this->hasMany(AdvancePayment::class);
     }
+
+    public function scopeExcludeRoles($query, array $roles)
+    {
+        return $query->whereDoesntHave('roles', function ($query) use ($roles) {
+            $query->whereIn('name', $roles);
+        });
+    }
 }
