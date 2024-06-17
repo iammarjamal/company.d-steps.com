@@ -1,4 +1,4 @@
-<div class="w-full pt-4 px-6 mt-1  border-t border-zinc-900/5 dark:border-zinc-50/5">
+<div class="w-full px-6 pt-4 mt-1 border-t border-zinc-900/5 dark:border-zinc-50/5">
 
     <div class="flex flex-row justify-between mx-2 mb-5 font-serif leading-5 text-neutral-700">
         <div class="flex flex-row items-center justify-center" x-data="{ popup: false }">
@@ -20,9 +20,19 @@
                         <div class="flex justify-center mb-6" x-show="user">
                             <form wire:submit="save" class="flex flex-col w-full mt-3.5">
                                 <div class="relative w-full mb-3">
-                                    <x-camelui::input label="{{ trans('app.title') }}"
-                                                      placeholder="{{ trans('app.title') }}" wire="title"
-                                                      icon="" required="true"/>
+                                    <label class="text-md text-zinc-900 dark:text-zinc-50" for="title">{{ trans('app.title') }} <span class="text-red-600 dark:text-red-400">*</span>:</label>
+                                    <select placeholder="{{ trans('app.title') }}" wire.model="title" required="true" class="w-full p-2 transition duration-100 ease-in-out border rounded-md shadow-sm rtl:pl-8 ltr:pr-8 placeholder-zinc-400 dark:bg-zinc-700 dark:text-zinc-300 dark:placeholder-zinc-400 border-zinc-200 focus:ring-primary-400 focus:border-primary-400 dark:border-zinc-500 form-input sm:text-sm focus:outline-none">
+                                        <option value="اجازة مرضية">اجازة مرضية</option>
+                                        <option value="اجازة زواج">اجازة زواج</option>
+                                        <option value="اجازة تعليمية">اجازة تعليمية</option>
+                                        <option value="اجازة حج">اجازة حج</option>
+                                        <option value="اجازة وفاة">اجازة وفاة</option>
+                                        <option value="اجازة ابوة/امومة">اجازة ابوة/امومة</option>
+                                        <option value="رحلة عمل / تدريب">رحلة عمل / تدريب</option>
+                                        <option value="اجازة بدون اجر">اجازة بدون اجر</option>
+                                        <option value="اذن شخصي">اذن شخصي</option>
+                                        <option value="عمل ميداني">عمل ميداني</option>
+                                    </select>
                                 </div>
                                 <div class="relative w-full mb-3">
                                     <x-camelui::input label="{{ trans('app.description') }}"
@@ -62,14 +72,14 @@
 {{--            >--}}
 
 {{--            <button wire:click="filters"--}}
-{{--                    class="flex flex-row items-center justify-center gap-2 px-4 py-2 bg-blue-500 text-white h-full rounded hover:bg-blue-600 focus:outline-none">--}}
+{{--                    class="flex flex-row items-center justify-center h-full gap-2 px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600 focus:outline-none">--}}
 {{--                {{ trans('app.search') }}--}}
 {{--                <i class="fa-solid fa-magnifying-glass"></i>--}}
 {{--            </button>--}}
 
 
 {{--            <button wire:click="resetFilters"--}}
-{{--                    class="flex flex-row items-center justify-center gap-2 px-4 py-2 bg-green-500 text-white h-full rounded hover:bg-green-600 focus:outline-none">--}}
+{{--                    class="flex flex-row items-center justify-center h-full gap-2 px-4 py-2 text-white bg-green-500 rounded hover:bg-green-600 focus:outline-none">--}}
 {{--                تهيئة--}}
 {{--                <svg class="fill-white" xmlns="http://www.w3.org/2000/svg" height="16" width="16"--}}
 {{--                     viewBox="0 0 512 512">--}}
@@ -168,14 +178,14 @@
 
 
     <div
-        class="relative overflow-hidden text-center w-full overflow-x-auto rounded-xl border border-slate-300 dark:border-slate-700">
+        class="relative w-full overflow-hidden overflow-x-auto text-center border rounded-xl border-slate-300 dark:border-slate-700">
         @if($vacations->isEmpty())
             <x-camelui::heading class="text-zinc-400 dark:text-zinc-600" size="lg">لا يوجد طلبات إجازة
             </x-camelui::heading>
         @else
-            <table class="w-full text-center text-sm text-slate-700 dark:text-slate-300">
+            <table class="w-full text-sm text-center text-slate-700 dark:text-slate-300">
                 <thead
-                    class="border-b border-slate-300 bg-slate-100 text-sm text-black dark:border-slate-700 dark:bg-slate-800 dark:text-white">
+                    class="text-sm text-black border-b border-slate-300 bg-slate-100 dark:border-slate-700 dark:bg-slate-800 dark:text-white">
                 <tr>
                     <th scope="col" class="p-4">العنوان</th>
                     <th scope="col" class="p-4">الوصف</th>
@@ -196,7 +206,7 @@
                         <td class="p-4">{{ \Carbon\Carbon::parse($vacation->starts_at)->format('F j, Y') }}</td>
                         <td class="p-4">{{ \Carbon\Carbon::parse($vacation->ends_at)->format('F j, Y') }}</td>
                         <td x-data="{ update: false , remove: false  }"
-                            class="p-4 flex items-center justify-center flex-row gap-2">
+                            class="flex flex-row items-center justify-center gap-2 p-4">
 
                             <!-- Delete modal -->
                             @if($vacation->status === 'requested')
@@ -222,7 +232,7 @@
 
                                 <!-- Update modal -->
                                 <x-camelui::link x-on:click="update = ! update;$wire.setToUpdate({{$vacation->id}})">
-                                    <i class="text-xl cursor-pointer fa-solid fa-edit text-teal-700 dark:text-teal-400"></i>
+                                    <i class="text-xl text-teal-700 cursor-pointer fa-solid fa-edit dark:text-teal-400"></i>
                                 </x-camelui::link>
                                 <x-camelui::modal wire="update">
                                     <div x-data="{ vacation: true }" x-on:update.window="update = false">
