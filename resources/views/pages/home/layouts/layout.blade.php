@@ -146,7 +146,7 @@
         <!-- Header -->
 
         <!-- Body -->
-        <main>
+        <main class="w-full h-full">
             {{ $slot }}
         </main>
         <!-- Body -->
@@ -297,7 +297,10 @@
             <!-- BackToTop-->
         </footer>
         <!-- Footer -->
+
+        <!-- Layout -->
     </div>
+
     <!-- Layout -->
 </div>
 @endsection
