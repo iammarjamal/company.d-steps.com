@@ -4,8 +4,8 @@
     lang="{{ trans('app.lang') }}"
     dir="{{ trans('app.dir') }}"
     class="scroll-smooth no-scrollbar"
-    x-data="{ theme: localStorage.getItem('theme'), body: false }"
-    x-init="$watch('theme', (val) => localStorage.setItem('theme', val));window.addEventListener('DOMContentLoaded', function () {setTimeout(function() { body = true; }, 1800);if(theme == null || theme == 'true' || theme == 'false'){ theme = 'system'; }const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)'); mediaQuery.addEventListener('change', (e) => { if(theme === 'system'){ document.documentElement.classList.toggle('dark', e.matches); } }); })"
+    x-data="{ theme: localStorage.getItem('theme'), list: JSON.parse(localStorage.getItem('list')) , body: false }"
+    x-init="$watch('theme', (val) => localStorage.setItem('theme', val)), $watch('list', (val) => localStorage.setItem('list', val)),window.addEventListener('DOMContentLoaded', function () {setTimeout(function() { body = true; }, 1800);if(theme == null || theme == 'true' || theme == 'false'){ theme = 'system'; }const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)'); mediaQuery.addEventListener('change', (e) => { if(theme === 'system'){ document.documentElement.classList.toggle('dark', e.matches); } }); })"
     :class="{ 'dark' : theme == 'dark' || theme == 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches }"
 >
 <head>

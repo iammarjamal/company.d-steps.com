@@ -120,6 +120,6 @@ class Index extends Component
             'count' => $count,
         ])
             ->layout('pages.admin.layouts.layout')
-            ->title(trans('dashboard.navbar.title.advance-payment'));
+            ->title(trans('app.dashboard.navbar.title.advance-payment'));
     }
 }

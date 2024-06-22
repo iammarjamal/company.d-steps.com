@@ -43,6 +43,12 @@ return [
     'notifications.general' => 'إشعار عام',
     'send' => 'أرسل',
 
+    'content.page' => 'الصفحة',
+    'content.image.title' => 'عنوان الصورة',
+    'content.image.description' => 'وصف الصورة',
+    'content.image.src' => 'مسار الصورة',
+    'content.image.alt' => 'نص بديل',
+
     'cost' => 'التكلفة',
     'price' => 'السعر',
     'gtin' => 'الباركود',
@@ -124,6 +130,7 @@ return [
     'dashboard.navbar.title.advance-payment' => 'سلفة مالية',
     'dashboard.navbar.index' => 'الرئيسية',
     'dashboard.index.title' => 'الرئيسية',
+    'dashboard.navbar.title.content' => 'المحتوى',
     'dashboard.navbar.general.profile' => 'الملف الشخصي',
     'dashboard.navbar.general.logout' => 'تسجيل الخروج',
     'dashboard.navbar.general.notifications.btn' => 'قراءة الكٌل',
@@ -136,6 +143,7 @@ return [
     'dashboard.users.hr' => 'HR',
 
     'dashboard.users.add.btn' => 'أضف مستخدم',
+    'dashboard.content.carousel.add.btn' => 'أضف صورة',
     'dashboard.hr.add.btn' => 'أضف HR',
     'dashboard.vacations.add.btn' => 'طلب إجازة',
     'dashboard.advance-payment.add.btn' => 'طلب سلفة',

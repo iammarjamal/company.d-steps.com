@@ -50,6 +50,13 @@
                                 <i class="inline-flex text-xl flex-inline {{ Route::currentRouteName() === 'admin.index' ? 'bx bxs-home' : 'bx bx-home' }}"></i>
                                 <p class="mx-3 text-lg">{{ trans('app.dashboard.navbar.index') }}</p>
                             </a>
+                            <a
+                                class="{{ Route::currentRouteName() === 'admin.content.index' ? 'bg-zinc-200 dark:bg-zinc-800 bg-opacity-25' : '' }} flex items-center px-4 py-2 mx-2 mt-1 rounded-md hover:bg-zinc-200 dark:hover:bg-zinc-800 hover:bg-opacity-25 text-zinc-900 dark:text-zinc-100 cursor-pointer"
+                                x-on:click="Sidebar = window.innerWidth <= 1024 ? false : true; setTimeout(() => { Livewire.navigate('{{ route('admin.content.index') }}') }, 350)"
+                            >
+                                <i class="inline-flex text-xl flex-inline {{ Route::currentRouteName() === 'admin.content.index' ? 'fa-solid fa-file' : 'fa-regular fa-file' }}"></i>
+                                <p class="mx-3 text-lg">{{ trans('app.dashboard.navbar.title.content') }}</p>
+                            </a>
                         </div>
                         <!-- General -->
 

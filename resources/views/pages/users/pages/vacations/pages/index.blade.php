@@ -21,7 +21,7 @@
                             <form wire:submit="save" class="flex flex-col w-full mt-3.5">
                                 <div class="relative w-full mb-3">
                                     <label class="text-md text-zinc-900 dark:text-zinc-50" for="title">{{ trans('app.title') }} <span class="text-red-600 dark:text-red-400">*</span>:</label>
-                                    <select placeholder="{{ trans('app.title') }}" wire.model="title" required="true" class="w-full p-2 transition duration-100 ease-in-out border rounded-md shadow-sm rtl:pl-8 ltr:pr-8 placeholder-zinc-400 dark:bg-zinc-700 dark:text-zinc-300 dark:placeholder-zinc-400 border-zinc-200 focus:ring-primary-400 focus:border-primary-400 dark:border-zinc-500 form-input sm:text-sm focus:outline-none">
+                                    <select placeholder="{{ trans('app.title') }}" wire:model="title" required="true" class="w-full p-2 transition duration-100 ease-in-out border rounded-md shadow-sm rtl:pl-8 ltr:pr-8 placeholder-zinc-400 dark:bg-zinc-700 dark:text-zinc-300 dark:placeholder-zinc-400 border-zinc-200 focus:ring-primary-400 focus:border-primary-400 dark:border-zinc-500 form-input sm:text-sm focus:outline-none">
                                         <option value="اجازة مرضية">اجازة مرضية</option>
                                         <option value="اجازة زواج">اجازة زواج</option>
                                         <option value="اجازة تعليمية">اجازة تعليمية</option>

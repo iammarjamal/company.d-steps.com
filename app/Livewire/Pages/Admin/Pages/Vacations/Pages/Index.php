@@ -126,6 +126,6 @@ class Index extends Component
             'count' => $count,
         ])
             ->layout('pages.admin.layouts.layout')
-            ->title(trans('dashboard.navbar.title.vacation'));
+            ->title(trans('app.dashboard.navbar.title.vacation'));
     }
 }

@@ -3,6 +3,7 @@
 use App\Enums\Permission;
 use App\Enums\Role;
 use App\Livewire\Pages\Admin\Pages\Index\Pages\Index as AdminIndex;
+use App\Livewire\Pages\Admin\Pages\Content\Pages\Index as ContentIndex;
 use App\Livewire\Pages\Admin\Pages\Profile\Pages\Index as ProfileIndex;
 use App\Livewire\Pages\Admin\Pages\HR\Pages\Index as HrIndex;
 use App\Livewire\Pages\Admin\Pages\Users\Pages\Index as UsersIndex;
@@ -15,6 +16,11 @@ Route::prefix('admin')->name('admin.')->middleware(['auth' , 'role:'. Role::Admi
     Route::get('/', AdminIndex::class)->name('index');
 
     Route::get('/profile', ProfileIndex::class)->name('profile');
+
+    Route::prefix('content')->name('content.')->middleware('permission:'. Permission::DashboardAccess->value)->group(function(){
+        Route::get('/', ContentIndex::class)->name('index');
+    });
+
 
     Route::prefix('users')->name('users.')->middleware('permission:'. Permission::ManageUsers->value)->group(function(){
         Route::get('/', UsersIndex::class)->name('index');
