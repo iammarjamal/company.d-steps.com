@@ -47,26 +47,21 @@
 
                     </div>
                     <div>
-                        <x-camelui::paragraph>هذا النص يمكن استبداله</x-camelui::paragraph>
-                        <x-camelui::paragraph>هذا النص يمكن استبداله</x-camelui::paragraph>
-                        <x-camelui::paragraph>هذا النص يمكن استبداله</x-camelui::paragraph>
+                        <x-camelui::paragraph>تأسست شركة خطوات التطوير في العام 2011 في مدينة جدة حيث تعمل الشركة في استيراد وبيع وتوزيع الاجهزة والمستلزمات الطبية كما توسع نشاط الشركة في السنوات الاخيرة ليشمل تصنيع الاجهزة والمستلزمات الطبية وذلك بافتتاح مصنع تابع للشركة في مدينة جدة.
+                            أيضا بدأت الشركة في التوسع في انشطتها باالاستحواذ على عدد من محطات الوقود في مدينة الرياض وذلك ايمانا منها بأهمية تنوع الاستثمار في عدة مجالات أخرى.
+                        </x-camelui::paragraph>
                     </div>
+                    <x-camelui::heading size="5xl">
+                        قيمنا
+                    </x-camelui::heading>
                     <div class="grid grid-cols-2">
                         <div class="">
-                            <x-camelui::paragraph size="sm" class="mb-3"><i class="fa fa-check text-primary me-2"></i>
-                                موثوقية
-                            </x-camelui::paragraph>
-                            <x-camelui::paragraph size="sm" class="mb-3"><i class="fa fa-check text-primary me-2"></i>
-                                خبرات تخصصية
-                            </x-camelui::paragraph>
+                            <x-camelui::paragraph size="sm" class="mb-3"><i class="fa fa-check text-primary me-2"></i> النزاهة</x-camelui::paragraph>
+                            <x-camelui::paragraph size="sm" class="mb-3"><i class="fa fa-check text-primary me-2"></i> الجودة والتميز </x-camelui::paragraph>
                         </div>
                         <div class="">
-                            <x-camelui::paragraph size="sm" class="mb-3"><i class="fa fa-check text-primary me-2"></i>
-                                دعم مستمر
-                            </x-camelui::paragraph>
-                            <x-camelui::paragraph size="sm" class="mb-3"><i class="fa fa-check text-primary me-2"></i>أسعار
-                                تنافسية
-                            </x-camelui::paragraph>
+                            <x-camelui::paragraph size="sm" class="mb-3"><i class="fa fa-check text-primary me-2"></i> الابتكار والتطوير</x-camelui::paragraph>
+                            <x-camelui::paragraph size="sm" class="mb-3"><i class="fa fa-check text-primary me-2"></i>خدمة المجتمع</x-camelui::paragraph>
                         </div>
                     </div>
                 </div>

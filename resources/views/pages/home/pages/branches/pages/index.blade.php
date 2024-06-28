@@ -48,7 +48,7 @@
                         <img class="wow zoomIn" data-wow-delay="0.5s" src="/assets/images/home.svg">
                     </div>
                     <x-camelui::heading size="sm" class="mt-6">
-                        فرع 1
+                        فرع جدة- شارع خالد بن الوليد 1
                     </x-camelui::heading>
                 </div>
                 <div
@@ -57,7 +57,7 @@
                         <img class="wow zoomIn" data-wow-delay="0.5s" src="/assets/images/home.svg">
                     </div>
                     <x-camelui::heading size="sm" class="mt-6">
-                        فرع 2
+                        فرع جدة-  خالد بن الوليد 2
                     </x-camelui::heading>
                 </div>
                 <div
@@ -66,10 +66,99 @@
                         <img class="wow zoomIn" data-wow-delay="0.5s" src="/assets/images/home.svg">
                     </div>
                     <x-camelui::heading size="sm" class="mt-6">
-                        فرع 3
+                        فرع بريدة
                     </x-camelui::heading>
                 </div>
-
+                <div
+                    class="text-center bg-white shadow-custom cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 hover:text-white group transition-all">
+                    <div class="mx-auto w-24 h-24">
+                        <img class="wow zoomIn" data-wow-delay="0.5s" src="/assets/images/home.svg">
+                    </div>
+                    <x-camelui::heading size="sm" class="mt-6">
+                        فرع الرياض - شارع الضباب1
+                    </x-camelui::heading>
+                </div>
+                <div
+                    class="text-center bg-white shadow-custom cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 hover:text-white group transition-all">
+                    <div class="mx-auto w-24 h-24">
+                        <img class="wow zoomIn" data-wow-delay="0.5s" src="/assets/images/home.svg">
+                    </div>
+                    <x-camelui::heading size="sm" class="mt-6">
+                        فرع الرياض- شارع الضباب 2
+                    </x-camelui::heading>
+                </div>
+                <div
+                    class="text-center bg-white shadow-custom cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 hover:text-white group transition-all">
+                    <div class="mx-auto w-24 h-24">
+                        <img class="wow zoomIn" data-wow-delay="0.5s" src="/assets/images/home.svg">
+                    </div>
+                    <x-camelui::heading size="sm" class="mt-6">
+                        فرع خميس مشيط
+                    </x-camelui::heading>
+                </div>
+                <div
+                    class="text-center bg-white shadow-custom cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 hover:text-white group transition-all">
+                    <div class="mx-auto w-24 h-24">
+                        <img class="wow zoomIn" data-wow-delay="0.5s" src="/assets/images/home.svg">
+                    </div>
+                    <x-camelui::heading size="sm" class="mt-6">
+                        فرع جازان
+                    </x-camelui::heading>
+                </div>
+                <div
+                    class="text-center bg-white shadow-custom cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 hover:text-white group transition-all">
+                    <div class="mx-auto w-24 h-24">
+                        <img class="wow zoomIn" data-wow-delay="0.5s" src="/assets/images/home.svg">
+                    </div>
+                    <x-camelui::heading size="sm" class="mt-6">
+                        فرع حائل
+                    </x-camelui::heading>
+                </div>
+                <div
+                    class="text-center bg-white shadow-custom cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 hover:text-white group transition-all">
+                    <div class="mx-auto w-24 h-24">
+                        <img class="wow zoomIn" data-wow-delay="0.5s" src="/assets/images/home.svg">
+                    </div>
+                    <x-camelui::heading size="sm" class="mt-6">
+                        فرع مكة
+                    </x-camelui::heading>
+                </div>
+                <div
+                    class="text-center bg-white shadow-custom cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 hover:text-white group transition-all">
+                    <div class="mx-auto w-24 h-24">
+                        <img class="wow zoomIn" data-wow-delay="0.5s" src="/assets/images/home.svg">
+                    </div>
+                    <x-camelui::heading size="sm" class="mt-6">
+                        فرع الطائف
+                    </x-camelui::heading>
+                </div>
+                <div
+                    class="text-center bg-white shadow-custom cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 hover:text-white group transition-all">
+                    <div class="mx-auto w-24 h-24">
+                        <img class="wow zoomIn" data-wow-delay="0.5s" src="/assets/images/home.svg">
+                    </div>
+                    <x-camelui::heading size="sm" class="mt-6">
+                        فرع جدة- الثغر 1
+                    </x-camelui::heading>
+                </div>
+                <div
+                    class="text-center bg-white shadow-custom cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 hover:text-white group transition-all">
+                    <div class="mx-auto w-24 h-24">
+                        <img class="wow zoomIn" data-wow-delay="0.5s" src="/assets/images/home.svg">
+                    </div>
+                    <x-camelui::heading size="sm" class="mt-6">
+                        فرع جدة- الثغر 2
+                    </x-camelui::heading>
+                </div>
+                <div
+                    class="text-center bg-white shadow-custom cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 hover:text-white group transition-all">
+                    <div class="mx-auto w-24 h-24">
+                        <img class="wow zoomIn" data-wow-delay="0.5s" src="/assets/images/home.svg">
+                    </div>
+                    <x-camelui::heading size="sm" class="mt-6">
+                        فرع جدة- صاري
+                    </x-camelui::heading>
+                </div>
             </div>
         </div>
     </section>
