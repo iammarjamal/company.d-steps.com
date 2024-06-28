@@ -134,7 +134,7 @@
         <!-- SideBar -->
 
         <!-- Main -->
-        <main class="w-full mt-2 overflow-y-scroll no-scrollbar  px-0 md:px-2 lg:px-4 xl:px-6">
+        <main class="w-full px-0 mt-2 overflow-y-scroll no-scrollbar md:px-2 lg:px-4 xl:px-6">
 
             <!-- Header -->
             <header class="relative z-20 flex items-center justify-between w-full px-3 py-2 pb-0" id="headerApp">
@@ -144,20 +144,18 @@
                     </x-camelui::button>
                 </div>
                 <div class="flex flex-wrap items-center phone:gap-2 laptop:gap-4">
-                    <div class="flex flex-wrap items-center  gap-2 lg:gap-2">
+                    <div class="flex flex-wrap items-center gap-2 lg:gap-2">
                         <!-- DarkMode -->
                         <div class="relative">
-                            {{--                            <x-general.darkmode box="true" />--}}
                             <x-darkmode box="true"/>
                         </div>
                         <!-- DarkMode -->
 
-                        <!-- Language -->
+                        {{-- <!-- Language -->
                         <div class="relative">
-                            {{--                            <x-general.language box="true" />--}}
                             <x-language box="true"/>
                         </div>
-                        <!-- Language -->
+                        <!-- Language --> --}}
 
                         <!-- Notification -->
                         <div class="relative">
@@ -175,7 +173,7 @@
             <!-- Header -->
 
             <!-- App -->
-            <div class="z-10 flex flex-col w-full mt-10 pb-10" id="App">
+            <div class="z-10 flex flex-col w-full pb-10 mt-10" id="App">
                 {{ $slot }}
             </div>
             <!-- App -->
