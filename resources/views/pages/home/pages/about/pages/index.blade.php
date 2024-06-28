@@ -75,7 +75,7 @@
 
 
     <!-- Company Purpose Start -->
-    <section id="services" class="bg-white border-b py-8">
+    <section id="services" class="bg-white dark:bg-gray-600 border-b py-8">
         <div class="container flex flex-col gap-10 max-w-5xl mx-auto m-8">
             <div class=" mb-4 pb-2">
                 {{--                <x-camelui::heading size="sm" class="mb-4 text-center">--}}

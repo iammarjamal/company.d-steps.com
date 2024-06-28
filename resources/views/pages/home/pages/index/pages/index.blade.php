@@ -127,7 +127,7 @@
             </x-camelui::heading>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4" data-aos="fade-up">
                 <div
-                    class="text-center bg-white shadow-custom  rounded cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 hover:text-white group transition-all">
+                    class="text-center bg-white dark:bg-gray-600 shadow-custom  rounded cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 hover:text-white group transition-all">
                     <div class="mx-auto w-24 h-24">
 {{--                        <svg class="w-full h-full fill-primary group-hover:fill-primary-800" xmlns="http://www.w3.org/2000/svg"--}}
 {{--                             viewBox="0 0 512 512" xml:space="preserve">--}}
@@ -185,14 +185,14 @@
 {{--</svg>--}}
 
 
-                        <svg class="w-full h-full fill-primary group-hover:fill-primary-800" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5,22H19a3,3,0,0,0,3-3V5a3,3,0,0,0-3-3H5A3,3,0,0,0,2,5V19A3,3,0,0,0,5,22Zm14-2H5a1,1,0,0,1-1-1V13H8a1,1,0,0,0,.928-.628L10,9.692l3.071,7.68a1,1,0,0,0,1.858,0L16.677,13H20v6A1,1,0,0,1,19,20ZM5,4H19a1,1,0,0,1,1,1v6H16a1,1,0,0,0-.929.629L14,14.307,10.929,6.628a1,1,0,0,0-1.857,0L7.323,11H4V5A1,1,0,0,1,5,4Z"/></svg>
+                        <svg class="w-full h-full fill-primary dark:fill-white group-hover:fill-primary-800 dark:group-hover:fill-primary-400" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5,22H19a3,3,0,0,0,3-3V5a3,3,0,0,0-3-3H5A3,3,0,0,0,2,5V19A3,3,0,0,0,5,22Zm14-2H5a1,1,0,0,1-1-1V13H8a1,1,0,0,0,.928-.628L10,9.692l3.071,7.68a1,1,0,0,0,1.858,0L16.677,13H20v6A1,1,0,0,1,19,20ZM5,4H19a1,1,0,0,1,1,1v6H16a1,1,0,0,0-.929.629L14,14.307,10.929,6.628a1,1,0,0,0-1.857,0L7.323,11H4V5A1,1,0,0,1,5,4Z"/></svg>
                     </div>
-                    <x-camelui::heading size="sm" class="mt-6 group-hover:text-primary-800">
+                    <x-camelui::heading size="sm" class="mt-6 group-hover:text-primary-800 dark:group-hover:text-primary-400">
                         استيراد وبيع وتوزيع الأجهزة والمستلزمات الطبية
                     </x-camelui::heading>
                 </div>
                 <div
-                    class="text-center bg-white shadow-custom cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 hover:text-white group transition-all">
+                    class="text-center bg-white dark:bg-gray-600 shadow-custom cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 hover:text-white group transition-all">
                     <div class="mx-auto w-24 h-24">
 {{--                        <svg class="w-full h-full fill-primary group-hover:fill-primary-800" xmlns="http://www.w3.org/2000/svg"--}}
 {{--                             viewBox="0 0 64 64">--}}
@@ -202,7 +202,7 @@
 {{--                            </g>--}}
 {{--                        </svg> --}}
 
-                        <svg class="w-full h-full fill-primary group-hover:fill-primary-800"  viewBox="0 0 512 512" id="Layer_1" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <svg class="w-full h-full fill-primary dark:fill-white group-hover:fill-primary-800 dark:group-hover:fill-primary-400"  viewBox="0 0 512 512" id="Layer_1" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 
 <style type="text/css">
     .st0{fill:#2B79C2;}
@@ -243,12 +243,12 @@
 
 </svg>
                     </div>
-                    <x-camelui::heading size="sm" class="mt-6 group-hover:text-primary-800">
+                    <x-camelui::heading size="sm" class="mt-6 group-hover:text-primary-800 dark:group-hover:text-primary-400">
                         تصنيع الأجهزة والمستلزمات الطبية
                     </x-camelui::heading>
                 </div>
                 <div
-                    class="text-center bg-white shadow-custom cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 hover:text-white group transition-all">
+                    class="text-center bg-white dark:bg-gray-600 shadow-custom cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 hover:text-white group transition-all">
                     <div class="mx-auto w-24 h-24">
 {{--                        <svg class="w-full h-full fill-primary group-hover:fill-primary-800" xmlns="http://www.w3.org/2000/svg"--}}
 {{--                             viewBox="0 0 74.34 74.34">--}}
@@ -306,7 +306,7 @@
 {{--                        </svg>--}}
 
                         <svg
-                            class="w-full h-full fill-primary group-hover:fill-primary-800"
+                            class="w-full h-full fill-primary dark:fill-white group-hover:fill-primary-800 dark:group-hover:fill-primary-400"
                             viewBox="0 0 14 14"
                             id="svg2">
                             <metadata
@@ -336,7 +336,7 @@
                                 style="fill-opacity:1;stroke:none" />
                         </svg>
                     </div>
-                    <x-camelui::heading size="sm" class="mt-6 group-hover:text-primary-800">
+                    <x-camelui::heading size="sm" class="mt-6 group-hover:text-primary-800 dark:group-hover:text-primary-400">
                      تزويد الوقود
                     </x-camelui::heading>
                 </div>
