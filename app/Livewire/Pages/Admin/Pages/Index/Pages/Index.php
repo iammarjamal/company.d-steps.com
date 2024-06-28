@@ -23,6 +23,8 @@ class Index extends Component
     public $totalHRUsers;
     public $totalNormalUsers;
 
+
+
     public function mount()
     {
         $this->loadUserStatistics();

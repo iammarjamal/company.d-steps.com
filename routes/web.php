@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\General\LanguageController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\URL;
 
@@ -19,3 +19,16 @@ if(env('APP_DEBUG') == false){
 
 
 
+Route::get('/refresh-laravel', function (){
+    try {
+        // Run Artisan commands
+        Artisan::call('cache:clear');
+        Artisan::call('config:clear');
+        Artisan::call('view:clear');
+        Artisan::call('optimize:clear');
+
+        return response()->json(['message' => 'All commands executed successfully!'], 200);
+    } catch (\Exception $e) {
+        return response()->json(['error' => $e->getMessage()], 500);
+    }
+});
