@@ -1,4 +1,4 @@
-<div class="w-full pt-4 px-6 mt-1  border-t border-zinc-900/5 dark:border-zinc-50/5">
+<div class="w-full px-6 pt-4 mt-1 border-t border-zinc-900/5 dark:border-zinc-50/5">
 
 
     <div class="flex flex-row justify-between mx-2 mb-5 font-serif leading-5 text-neutral-700">
@@ -120,11 +120,13 @@
     <!-- table -->
     <div class="flex items-center justify-start w-full gap-y-0.5" :class="list ? 'flex-col' : 'flex-wrap'">
         @forelse ($users as $user)
-            <div
-                :class="list ? 'flex flex-col w-full p-1 cursor-pointer' : 'm-1 p-1  w-1/2 md:w-1/3 lg:w-1/4'">
-                <livewire:pages.admin.pages.hr.pages.single-hr @filters="$refresh" :$user
-                                                                     wire:key="table-{{random_int(1000000, 9999999)}}-{{$user->id}}"/>
-            </div>
+        <div :class="list ? 'flex flex-col w-full p-1 cursor-pointer' : 'm-1 p-1  w-1/2 md:w-1/3 lg:w-1/4'">
+            <livewire:pages.admin.pages.hr.pages.single-hr
+                :filters="$refresh"
+                :user="$user"
+                wire:key="'table-' . random_int(1000000, 9999999) . '-' . $user->id"
+            />
+        </div>
         @empty
             <div class="flex flex-col items-center justify-center w-full h-screen text-center max-h-80"
                  wire:key="empty">
