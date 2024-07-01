@@ -127,13 +127,8 @@
             </x-camelui::heading>
             <div class="grid grid-cols-1 gap-4 md:grid-cols-3" data-aos="fade-up">
                 <div
-<<<<<<< HEAD
-                    class="text-center bg-white dark:bg-gray-600 shadow-custom rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 hover:text-white group transition-all">
-                    <div class="mx-auto w-24 h-24">
-=======
-                    class="flex flex-col items-center p-8 text-center transition-all bg-white rounded cursor-pointer dark:bg-gray-600 shadow-custom hover:bg-gray-200 hover:text-white group">
+                    class="flex flex-col items-center p-8 text-center transition-all bg-white cursor-pointer dark:bg-gray-600 shadow-custom rounded-2xl hover:bg-gray-200 hover:text-white group">
                     <div class="w-24 h-24 mx-auto">
->>>>>>> 1a509f692aa112a8f6429851e22c72ee4bd2c7db
 {{--                        <svg class="w-full h-full fill-primary group-hover:fill-primary-800" xmlns="http://www.w3.org/2000/svg"--}}
 {{--                             viewBox="0 0 512 512" xml:space="preserve">--}}
 {{--<g>--}}
@@ -197,13 +192,8 @@
                     </x-camelui::heading>
                 </div>
                 <div
-<<<<<<< HEAD
-                    class="text-center bg-white dark:bg-gray-600 shadow-custom rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 hover:text-white group transition-all">
-                    <div class="mx-auto w-24 h-24">
-=======
-                    class="flex flex-col items-center p-8 text-center transition-all bg-white cursor-pointer dark:bg-gray-600 shadow-custom hover:bg-gray-200 hover:text-white group">
+                    class="flex flex-col items-center p-8 text-center transition-all bg-white cursor-pointer dark:bg-gray-600 shadow-custom rounded-2xl hover:bg-gray-200 hover:text-white group">
                     <div class="w-24 h-24 mx-auto">
->>>>>>> 1a509f692aa112a8f6429851e22c72ee4bd2c7db
 {{--                        <svg class="w-full h-full fill-primary group-hover:fill-primary-800" xmlns="http://www.w3.org/2000/svg"--}}
 {{--                             viewBox="0 0 64 64">--}}
 {{--                            <g id="paint-painted-paint_roller-home-house" data-name="paint-painted-paint roller-home-house">--}}
@@ -258,13 +248,8 @@
                     </x-camelui::heading>
                 </div>
                 <div
-<<<<<<< HEAD
-                    class="text-center bg-white dark:bg-gray-600 shadow-custom rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 hover:text-white group transition-all">
-                    <div class="mx-auto w-24 h-24">
-=======
-                    class="flex flex-col items-center p-8 text-center transition-all bg-white cursor-pointer dark:bg-gray-600 shadow-custom hover:bg-gray-200 hover:text-white group">
+                    class="flex flex-col items-center p-8 text-center transition-all bg-white cursor-pointer dark:bg-gray-600 shadow-custom rounded-2xl hover:bg-gray-200 hover:text-white group">
                     <div class="w-24 h-24 mx-auto">
->>>>>>> 1a509f692aa112a8f6429851e22c72ee4bd2c7db
 {{--                        <svg class="w-full h-full fill-primary group-hover:fill-primary-800" xmlns="http://www.w3.org/2000/svg"--}}
 {{--                             viewBox="0 0 74.34 74.34">--}}
 {{--                            <path d="M29.52,53.303h-8.945c-0.552,0-1,0.448-1,1v8.104c0,0.343,0.176,0.662,0.466,0.845l4.473,2.826--}}
