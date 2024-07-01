@@ -97,9 +97,14 @@
                                                       placeholder="{{ trans('app.search') }}"
                                                       icon="fa-solid fa-magnifying-glass" required="false"/>
 
-                                    <x-camelui::button class="py-2" color="primary" icon="fa-solid fa-magnifying-glass"
+                                    <x-camelui::button class="py-2 mt-3" color="primary" icon="fa-solid fa-magnifying-glass"
                                                        type="submit" wire:target="filters">
                                         {{ trans('app.search') }}
+                                    </x-camelui::button>
+                                    <x-camelui::button class="py-2 mt-3" color="success"
+                                                       icon="fa-solid fa-sliders"
+                                                       type="button" wire:click="resetFilters" wire:target="resetFilters">
+                                        {{ trans('app.reset') }}
                                     </x-camelui::button>
                                 </form>
                             </div>

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Pages\Admin\Pages\HR\Pages;
+namespace App\Livewire\Pages\Admin\Pages\Hr\Pages;
 
 use App\Enums\Role;
 use App\Models\User;
@@ -25,14 +25,7 @@ class Index extends Component
     public $search;
 
     // Pagination
-    public $pagination = 10;
-
-    protected $listeners = ['save' => 'handleSave'];
-
-    public function handleSave()
-    {
-        // Code to handle the 'save' event
-    }
+    public $pagination = 5;
 
     public function save()
     {
@@ -57,6 +50,14 @@ class Index extends Component
     }
 
     #[On('remove')]
+    #[On('save')]
+    public function resetFilters(){
+        $this->search = '';
+        // Close Sidebar
+        $this->dispatch('filters');
+    }
+
+
     public function filters()
     {
         $this->validate([
@@ -65,6 +66,11 @@ class Index extends Component
 
         // Close Sidebar
         $this->dispatch('filters');
+    }
+
+    public function setPagination()
+    {
+        $this->pagination += 5;
     }
 
     public function render()

@@ -5,7 +5,7 @@ use App\Enums\Role;
 use App\Livewire\Pages\Admin\Pages\Index\Pages\Index as AdminIndex;
 use App\Livewire\Pages\Admin\Pages\Content\Pages\Index as ContentIndex;
 use App\Livewire\Pages\Admin\Pages\Profile\Pages\Index as ProfileIndex;
-use App\Livewire\Pages\Admin\Pages\HR\Pages\Index as HrIndex;
+use App\Livewire\Pages\Admin\Pages\Hr\Pages\Index as HrIndex;
 use App\Livewire\Pages\Admin\Pages\Users\Pages\Index as UsersIndex;
 use App\Livewire\Pages\Admin\Pages\Notifications\Pages\Index as NotificationsIndex;
 use App\Livewire\Pages\Admin\Pages\Vacations\Pages\Index as VacationIndex;

@@ -51,8 +51,10 @@ class Index extends Component
 
     #[On('remove')]
     #[On('save')]
-    public function resetFilter(){
+    public function resetFilters(){
         $this->search = '';
+        // Close Sidebar
+        $this->dispatch('filters');
     }
 
     public function filters()

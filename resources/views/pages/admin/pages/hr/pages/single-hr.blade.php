@@ -59,7 +59,7 @@
             <x-camelui::card class="flex  py-8 gap-y-3 flex-col justify-center items-center p-2.5" rounded="2xl">
                 <img src="https://ui-avatars.com/api/?name={{$username}}&background=4F46E5&color=fff"
                      class="mb-1 rounded-full"/>
-                <x-camelui::heading size="lg">
+                <x-camelui::heading size="xs">
                     {{ $username }}
                 </x-camelui::heading>
                 <div

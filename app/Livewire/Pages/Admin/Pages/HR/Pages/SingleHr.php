@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Pages\Admin\Pages\HR\Pages;
+namespace App\Livewire\Pages\Admin\Pages\Hr\Pages;
 
 use App\Models\User;
 use Illuminate\Validation\Rule;

@@ -43,6 +43,7 @@
                                         {{ trans('app.save') }}
                                     </x-camelui::button>
                                 </div>
+
                             </form>
                         </div>
                         <!-- User -->
@@ -98,9 +99,14 @@
                                                       placeholder="{{ trans('app.search') }}"
                                                       icon="fa-solid fa-magnifying-glass" required="false"/>
 
-                                    <x-camelui::button class="py-2" color="primary" icon="fa-solid fa-magnifying-glass"
+                                    <x-camelui::button class="py-2 mt-3" color="primary" icon="fa-solid fa-magnifying-glass"
                                                        type="submit" wire:target="filters">
                                         {{ trans('app.search') }}
+                                    </x-camelui::button>
+                                    <x-camelui::button class="py-2 mt-3" color="success"
+                                                       icon="fa-solid fa-sliders"
+                                                       type="button" wire:click="resetFilters" wire:target="resetFilters">
+                                        {{ trans('app.reset') }}
                                     </x-camelui::button>
                                 </form>
                             </div>
@@ -120,10 +126,10 @@
     <!-- table -->
     <div class="flex items-center justify-start w-full gap-y-0.5" :class="list ? 'flex-col' : 'flex-wrap'">
         @forelse ($users as $user)
-        <div :class="list ? 'flex flex-col w-full p-1 cursor-pointer' : 'm-1 p-1  w-1/2 md:w-1/3 lg:w-1/4'">
-            <livewire:pages.admin.pages.HR.pages.single-hr @filters="$refresh" :$user
-                                                           wire:key="{{$user->id}}"
-            />
+            <div
+                :class="list ? 'flex flex-col w-full p-1 cursor-pointer' : 'p-1  w-1/2 md:w-1/3 lg:w-1/4'">
+            <livewire:pages.admin.pages.hr.pages.single-hr @filters="$refresh" :$user
+                                                           wire:key="table-{{random_int(1000000, 9999999)}}-{{$user->id}}"/>
         </div>
         @empty
             <div class="flex flex-col items-center justify-center w-full h-screen text-center max-h-80"
@@ -146,7 +152,7 @@
     </div>
     @if($count > $pagination)
         <div class="flex flex-col items-center justify-center w-full pt-8 mt-32 text-center">
-            <x-camelui::button class="py-2" color="primary" wire:click="pagination">
+            <x-camelui::button class="py-2" color="primary" wire:click="setPagination">
                 {{ trans('app.more') }}
             </x-camelui::button>
         </div>
