@@ -137,7 +137,7 @@
 
     <!-- Script -->
     @livewireScripts
+    @stack('js')
     <!-- Script -->
-@stack('js')
 </body>
 </html>
