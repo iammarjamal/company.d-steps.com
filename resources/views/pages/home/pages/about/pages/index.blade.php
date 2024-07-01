@@ -1,7 +1,7 @@
 <div>
 
     <!-- Hero Start-->
-    <div x-data="carouselData()" x-init="fetchSlides()" class="relative w-full overflow-hidden">
+    <div x-data="carouselData()" x-init="fetchSlides()" class="relative w-full overflow-hidden rounded-2xl">
         <div class="relative min-h-[75svh] w-full">
             <template x-for="(slide, index) in slides" :key="index">
                 <div x-cloak x-show="currentSlideIndex == index + 1" class="absolute inset-0" x-transition.opacity.duration.1000ms>
@@ -75,7 +75,7 @@
 
 
     <!-- Company Purpose Start -->
-    <section id="services" class="bg-white dark:bg-gray-600 border-b py-8">
+    <section id="services" class="bg-white  dark:bg-zinc-50/5 border-b py-8">
         <div class="container flex flex-col gap-10 max-w-5xl mx-auto m-8">
             <div class=" mb-4 pb-2">
                 {{--                <x-camelui::heading size="sm" class="mb-4 text-center">--}}

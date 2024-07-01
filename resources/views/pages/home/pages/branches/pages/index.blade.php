@@ -1,7 +1,7 @@
 <div>
 
     <!-- Hero Start-->
-    <div x-data="carouselData()" x-init="fetchSlides()" class="relative w-full overflow-hidden">
+    <div x-data="carouselData()" x-init="fetchSlides()" class="relative w-full overflow-hidden rounded-2xl">
         <div class="relative min-h-[75svh] w-full">
             <template x-for="(slide, index) in slides" :key="index">
                 <div x-cloak x-show="currentSlideIndex == index + 1" class="absolute inset-0" x-transition.opacity.duration.1000ms>
@@ -43,7 +43,7 @@
             </x-camelui::heading>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4" data-aos="fade-up">
                 <div
-                    class="text-center bg-white dark:bg-gray-600 shadow-custom  rounded cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 dark:hover:bg-gray-400 hover:text-white group transition-all">
+                    class="text-center bg-white dark:bg-gray-600 shadow-custom  rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 dark:hover:bg-gray-400 hover:text-white group transition-all">
                     <div class="mx-auto w-24 h-24">
                         <img class="wow zoomIn" data-wow-delay="0.5s" src="/assets/images/home.svg">
                     </div>
@@ -52,7 +52,7 @@
                     </x-camelui::heading>
                 </div>
                 <div
-                    class="text-center bg-white dark:bg-gray-600 shadow-custom cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 dark:hover:bg-gray-400 hover:text-white group transition-all">
+                    class="text-center bg-white dark:bg-gray-600 shadow-custom rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 dark:hover:bg-gray-400 hover:text-white group transition-all">
                     <div class="mx-auto w-24 h-24">
                         <img class="wow zoomIn" data-wow-delay="0.5s" src="/assets/images/home.svg">
                     </div>
@@ -61,7 +61,7 @@
                     </x-camelui::heading>
                 </div>
                 <div
-                    class="text-center bg-white dark:bg-gray-600 shadow-custom cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 dark:hover:bg-gray-400 hover:text-white group transition-all">
+                    class="text-center bg-white dark:bg-gray-600 shadow-custom rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 dark:hover:bg-gray-400 hover:text-white group transition-all">
                     <div class="mx-auto w-24 h-24">
                         <img class="wow zoomIn" data-wow-delay="0.5s" src="/assets/images/home.svg">
                     </div>
@@ -70,7 +70,7 @@
                     </x-camelui::heading>
                 </div>
                 <div
-                    class="text-center bg-white dark:bg-gray-600 shadow-custom cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 dark:hover:bg-gray-400 hover:text-white group transition-all">
+                    class="text-center bg-white dark:bg-gray-600 shadow-custom rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 dark:hover:bg-gray-400 hover:text-white group transition-all">
                     <div class="mx-auto w-24 h-24">
                         <img class="wow zoomIn" data-wow-delay="0.5s" src="/assets/images/home.svg">
                     </div>
@@ -79,7 +79,7 @@
                     </x-camelui::heading>
                 </div>
                 <div
-                    class="text-center bg-white dark:bg-gray-600 shadow-custom cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 dark:hover:bg-gray-400 hover:text-white group transition-all">
+                    class="text-center bg-white dark:bg-gray-600 shadow-custom rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 dark:hover:bg-gray-400 hover:text-white group transition-all">
                     <div class="mx-auto w-24 h-24">
                         <img class="wow zoomIn" data-wow-delay="0.5s" src="/assets/images/home.svg">
                     </div>
@@ -88,7 +88,7 @@
                     </x-camelui::heading>
                 </div>
                 <div
-                    class="text-center bg-white dark:bg-gray-600 shadow-custom cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 dark:hover:bg-gray-400 hover:text-white group transition-all">
+                    class="text-center bg-white dark:bg-gray-600 shadow-custom rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 dark:hover:bg-gray-400 hover:text-white group transition-all">
                     <div class="mx-auto w-24 h-24">
                         <img class="wow zoomIn" data-wow-delay="0.5s" src="/assets/images/home.svg">
                     </div>
@@ -97,7 +97,7 @@
                     </x-camelui::heading>
                 </div>
                 <div
-                    class="text-center bg-white dark:bg-gray-600 shadow-custom cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 dark:hover:bg-gray-400 hover:text-white group transition-all">
+                    class="text-center bg-white dark:bg-gray-600 shadow-custom rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 dark:hover:bg-gray-400 hover:text-white group transition-all">
                     <div class="mx-auto w-24 h-24">
                         <img class="wow zoomIn" data-wow-delay="0.5s" src="/assets/images/home.svg">
                     </div>
@@ -106,7 +106,7 @@
                     </x-camelui::heading>
                 </div>
                 <div
-                    class="text-center bg-white dark:bg-gray-600 shadow-custom cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 dark:hover:bg-gray-400 hover:text-white group transition-all">
+                    class="text-center bg-white dark:bg-gray-600 shadow-custom rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 dark:hover:bg-gray-400 hover:text-white group transition-all">
                     <div class="mx-auto w-24 h-24">
                         <img class="wow zoomIn" data-wow-delay="0.5s" src="/assets/images/home.svg">
                     </div>
@@ -115,7 +115,7 @@
                     </x-camelui::heading>
                 </div>
                 <div
-                    class="text-center bg-white dark:bg-gray-600 shadow-custom cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 dark:hover:bg-gray-400 hover:text-white group transition-all">
+                    class="text-center bg-white dark:bg-gray-600 shadow-custom rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 dark:hover:bg-gray-400 hover:text-white group transition-all">
                     <div class="mx-auto w-24 h-24">
                         <img class="wow zoomIn" data-wow-delay="0.5s" src="/assets/images/home.svg">
                     </div>
@@ -124,7 +124,7 @@
                     </x-camelui::heading>
                 </div>
                 <div
-                    class="text-center bg-white dark:bg-gray-600 shadow-custom cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 dark:hover:bg-gray-400 hover:text-white group transition-all">
+                    class="text-center bg-white dark:bg-gray-600 shadow-custom rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 dark:hover:bg-gray-400 hover:text-white group transition-all">
                     <div class="mx-auto w-24 h-24">
                         <img class="wow zoomIn" data-wow-delay="0.5s" src="/assets/images/home.svg">
                     </div>
@@ -133,7 +133,7 @@
                     </x-camelui::heading>
                 </div>
                 <div
-                    class="text-center bg-white dark:bg-gray-600 shadow-custom cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 dark:hover:bg-gray-400 hover:text-white group transition-all">
+                    class="text-center bg-white dark:bg-gray-600 shadow-custom rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 dark:hover:bg-gray-400 hover:text-white group transition-all">
                     <div class="mx-auto w-24 h-24">
                         <img class="wow zoomIn" data-wow-delay="0.5s" src="/assets/images/home.svg">
                     </div>
@@ -142,7 +142,7 @@
                     </x-camelui::heading>
                 </div>
                 <div
-                    class="text-center bg-white dark:bg-gray-600 shadow-custom cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 dark:hover:bg-gray-400 hover:text-white group transition-all">
+                    class="text-center bg-white dark:bg-gray-600 shadow-custom rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 dark:hover:bg-gray-400 hover:text-white group transition-all">
                     <div class="mx-auto w-24 h-24">
                         <img class="wow zoomIn" data-wow-delay="0.5s" src="/assets/images/home.svg">
                     </div>
@@ -151,7 +151,7 @@
                     </x-camelui::heading>
                 </div>
                 <div
-                    class="text-center bg-white dark:bg-gray-600 shadow-custom cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 dark:hover:bg-gray-400 hover:text-white group transition-all">
+                    class="text-center bg-white dark:bg-gray-600 shadow-custom rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 dark:hover:bg-gray-400 hover:text-white group transition-all">
                     <div class="mx-auto w-24 h-24">
                         <img class="wow zoomIn" data-wow-delay="0.5s" src="/assets/images/home.svg">
                     </div>
