@@ -41,119 +41,119 @@
             <x-camelui::heading size="3xl" class="text-center my-8">
                 تعرف على فروعنا
             </x-camelui::heading>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4" data-aos="fade-up">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div
-                    class="text-center bg-white dark:bg-gray-600 shadow-custom  rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 dark:hover:bg-gray-400 hover:text-white group transition-all">
+                    class="text-center bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-600 shadow-custom  rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-zinc-300 dark:hover:bg-zinc-400 hover:text-white group transition-all">
                     <div class="mx-auto w-24 h-24">
-                        <img class="wow zoomIn" data-wow-delay="0.5s" src="/assets/images/home.svg">
+                        <img class="bg-zinc-200 dark:bg-zinc-50 rounded-full"  src="/assets/images/home.svg">
                     </div>
                     <x-camelui::heading size="sm" class="mt-6">
                         فرع جدة- شارع خالد بن الوليد 1
                     </x-camelui::heading>
                 </div>
                 <div
-                    class="text-center bg-white dark:bg-gray-600 shadow-custom rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 dark:hover:bg-gray-400 hover:text-white group transition-all">
+                    class="text-center bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-600 shadow-custom rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-zinc-300 dark:hover:bg-zinc-400 hover:text-white group transition-all">
                     <div class="mx-auto w-24 h-24">
-                        <img class="wow zoomIn" data-wow-delay="0.5s" src="/assets/images/home.svg">
+                        <img class="bg-zinc-200 dark:bg-zinc-50 rounded-full"  src="/assets/images/home.svg">
                     </div>
                     <x-camelui::heading size="sm" class="mt-6">
                         فرع جدة-  خالد بن الوليد 2
                     </x-camelui::heading>
                 </div>
                 <div
-                    class="text-center bg-white dark:bg-gray-600 shadow-custom rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 dark:hover:bg-gray-400 hover:text-white group transition-all">
+                    class="text-center bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-600 shadow-custom rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-zinc-300 dark:hover:bg-zinc-400 hover:text-white group transition-all">
                     <div class="mx-auto w-24 h-24">
-                        <img class="wow zoomIn" data-wow-delay="0.5s" src="/assets/images/home.svg">
+                        <img class="bg-zinc-200 dark:bg-zinc-50 rounded-full" src="/assets/images/home.svg">
                     </div>
                     <x-camelui::heading size="sm" class="mt-6">
                         فرع بريدة
                     </x-camelui::heading>
                 </div>
                 <div
-                    class="text-center bg-white dark:bg-gray-600 shadow-custom rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 dark:hover:bg-gray-400 hover:text-white group transition-all">
+                    class="text-center bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-600 shadow-custom rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-zinc-300 dark:hover:bg-zinc-400 hover:text-white group transition-all">
                     <div class="mx-auto w-24 h-24">
-                        <img class="wow zoomIn" data-wow-delay="0.5s" src="/assets/images/home.svg">
+                        <img class="bg-zinc-200 dark:bg-zinc-50 rounded-full" src="/assets/images/home.svg">
                     </div>
                     <x-camelui::heading size="sm" class="mt-6">
                         فرع الرياض - شارع الضباب1
                     </x-camelui::heading>
                 </div>
                 <div
-                    class="text-center bg-white dark:bg-gray-600 shadow-custom rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 dark:hover:bg-gray-400 hover:text-white group transition-all">
+                    class="text-center bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-600 shadow-custom rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-zinc-300 dark:hover:bg-zinc-400 hover:text-white group transition-all">
                     <div class="mx-auto w-24 h-24">
-                        <img class="wow zoomIn" data-wow-delay="0.5s" src="/assets/images/home.svg">
+                        <img class="bg-zinc-200 dark:bg-zinc-50 rounded-full"  src="/assets/images/home.svg">
                     </div>
                     <x-camelui::heading size="sm" class="mt-6">
                         فرع الرياض- شارع الضباب 2
                     </x-camelui::heading>
                 </div>
                 <div
-                    class="text-center bg-white dark:bg-gray-600 shadow-custom rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 dark:hover:bg-gray-400 hover:text-white group transition-all">
+                    class="text-center bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-600 shadow-custom rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-zinc-300 dark:hover:bg-zinc-400 hover:text-white group transition-all">
                     <div class="mx-auto w-24 h-24">
-                        <img class="wow zoomIn" data-wow-delay="0.5s" src="/assets/images/home.svg">
+                        <img class="bg-zinc-200 dark:bg-zinc-50 rounded-full"  src="/assets/images/home.svg">
                     </div>
                     <x-camelui::heading size="sm" class="mt-6">
                         فرع خميس مشيط
                     </x-camelui::heading>
                 </div>
                 <div
-                    class="text-center bg-white dark:bg-gray-600 shadow-custom rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 dark:hover:bg-gray-400 hover:text-white group transition-all">
+                    class="text-center bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-600 shadow-custom rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-zinc-300 dark:hover:bg-zinc-400 hover:text-white group transition-all">
                     <div class="mx-auto w-24 h-24">
-                        <img class="wow zoomIn" data-wow-delay="0.5s" src="/assets/images/home.svg">
+                        <img class="bg-zinc-200 dark:bg-zinc-50 rounded-full"  src="/assets/images/home.svg">
                     </div>
                     <x-camelui::heading size="sm" class="mt-6">
                         فرع جازان
                     </x-camelui::heading>
                 </div>
                 <div
-                    class="text-center bg-white dark:bg-gray-600 shadow-custom rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 dark:hover:bg-gray-400 hover:text-white group transition-all">
+                    class="text-center bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-600 shadow-custom rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-zinc-300 dark:hover:bg-zinc-400 hover:text-white group transition-all">
                     <div class="mx-auto w-24 h-24">
-                        <img class="wow zoomIn" data-wow-delay="0.5s" src="/assets/images/home.svg">
+                        <img class="bg-zinc-200 dark:bg-zinc-50 rounded-full"  src="/assets/images/home.svg">
                     </div>
                     <x-camelui::heading size="sm" class="mt-6">
                         فرع حائل
                     </x-camelui::heading>
                 </div>
                 <div
-                    class="text-center bg-white dark:bg-gray-600 shadow-custom rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 dark:hover:bg-gray-400 hover:text-white group transition-all">
+                    class="text-center bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-600 shadow-custom rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-zinc-300 dark:hover:bg-zinc-400 hover:text-white group transition-all">
                     <div class="mx-auto w-24 h-24">
-                        <img class="wow zoomIn" data-wow-delay="0.5s" src="/assets/images/home.svg">
+                        <img class="bg-zinc-200 dark:bg-zinc-50 rounded-full"  src="/assets/images/home.svg">
                     </div>
                     <x-camelui::heading size="sm" class="mt-6">
                         فرع مكة
                     </x-camelui::heading>
                 </div>
                 <div
-                    class="text-center bg-white dark:bg-gray-600 shadow-custom rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 dark:hover:bg-gray-400 hover:text-white group transition-all">
+                    class="text-center bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-600 shadow-custom rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-zinc-300 dark:hover:bg-zinc-400 hover:text-white group transition-all">
                     <div class="mx-auto w-24 h-24">
-                        <img class="wow zoomIn" data-wow-delay="0.5s" src="/assets/images/home.svg">
+                        <img class="bg-zinc-200 dark:bg-zinc-50 rounded-full"  src="/assets/images/home.svg">
                     </div>
                     <x-camelui::heading size="sm" class="mt-6">
                         فرع الطائف
                     </x-camelui::heading>
                 </div>
                 <div
-                    class="text-center bg-white dark:bg-gray-600 shadow-custom rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 dark:hover:bg-gray-400 hover:text-white group transition-all">
+                    class="text-center bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-600 shadow-custom rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-zinc-300 dark:hover:bg-zinc-400 hover:text-white group transition-all">
                     <div class="mx-auto w-24 h-24">
-                        <img class="wow zoomIn" data-wow-delay="0.5s" src="/assets/images/home.svg">
+                        <img class="bg-zinc-200 dark:bg-zinc-50 rounded-full"  src="/assets/images/home.svg">
                     </div>
                     <x-camelui::heading size="sm" class="mt-6">
                         فرع جدة- الثغر 1
                     </x-camelui::heading>
                 </div>
                 <div
-                    class="text-center bg-white dark:bg-gray-600 shadow-custom rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 dark:hover:bg-gray-400 hover:text-white group transition-all">
+                    class="text-center bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-600 shadow-custom rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-zinc-300 dark:hover:bg-zinc-400 hover:text-white group transition-all">
                     <div class="mx-auto w-24 h-24">
-                        <img class="wow zoomIn" data-wow-delay="0.5s" src="/assets/images/home.svg">
+                        <img class="bg-zinc-200 dark:bg-zinc-50 rounded-full"  src="/assets/images/home.svg">
                     </div>
                     <x-camelui::heading size="sm" class="mt-6">
                         فرع جدة- الثغر 2
                     </x-camelui::heading>
                 </div>
                 <div
-                    class="text-center bg-white dark:bg-gray-600 shadow-custom rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 dark:hover:bg-gray-400 hover:text-white group transition-all">
+                    class="text-center bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-600 shadow-custom rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-zinc-300 dark:hover:bg-zinc-400 hover:text-white group transition-all">
                     <div class="mx-auto w-24 h-24">
-                        <img class="wow zoomIn" data-wow-delay="0.5s" src="/assets/images/home.svg">
+                        <img class="bg-zinc-200 dark:bg-zinc-50 rounded-full"  src="/assets/images/home.svg">
                     </div>
                     <x-camelui::heading size="sm" class="mt-6">
                         فرع جدة- صاري

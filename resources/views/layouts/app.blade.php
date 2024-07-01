@@ -70,6 +70,11 @@
     <!-- Assets -->
 
     <!-- Setup -->
+    <style>
+        #nprogress .bar {
+            height: 4px !important;
+        }
+    </style>
     <script>
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
             if (localStorage.getItem("theme") == 'system' || localStorage.getItem("theme") == 'dark'){
@@ -132,7 +137,7 @@
 
     <!-- Script -->
     @livewireScripts
+    @stack('js')
     <!-- Script -->
-@stack('js')
 </body>
 </html>

@@ -16,17 +16,17 @@
     <div x-data="carouselData()" x-init="fetchSlides()" class="relative w-full overflow-hidden rounded-2xl">
         <div class="relative min-h-[75svh] w-full">
             <template x-for="(slide, index) in slides" :key="index">
-                <div x-cloak x-show="currentSlideIndex == index + 1" class="absolute inset-0" x-transition.opacity.duration.1000ms>
-                    <div class="lg:px-32 lg:py-14 absolute inset-0 z-10 flex flex-col items-center justify-end gap-2 bg-gradient-to-t from-slate-900/85 to-transparent px-16 py-12 text-center">
+                <div x-cloak x-show="currentSlideIndex == index + 1" class="absolute inset-0 rounded-2xl" x-transition.opacity.duration.1000ms>
+                    <div class="absolute inset-0 z-10 flex flex-col items-center justify-end gap-2 px-16 py-12 text-center lg:px-32 lg:py-14 bg-gradient-to-t from-slate-900/85 to-transparent">
                         <h3 class="w-full lg:w-[80%] text-balance text-2xl lg:text-3xl font-bold text-white" x-text="slide.title" :aria-describedby="'slide' + (index + 1) + 'Description'"></h3>
-                        <p class="lg:w-1/2 w-full text-pretty text-sm text-slate-300" x-text="slide.description" :id="'slide' + (index + 1) + 'Description'"></p>
+                        <p class="w-full text-sm lg:w-1/2 text-pretty text-slate-300" x-text="slide.description" :id="'slide' + (index + 1) + 'Description'"></p>
                     </div>
-                    <img class="absolute w-full h-full inset-0 object-cover text-slate-700 dark:text-slate-300" :src="slide.imgSrc" :alt="slide.imgAlt" />
+                    <img class="absolute inset-0 object-cover w-full h-full text-slate-700 dark:text-slate-300" :src="slide.imgSrc" :alt="slide.imgAlt" />
                 </div>
             </template>
         </div>
 
-        <button type="button" class="absolute bottom-5 right-5 z-20 rounded-full text-slate-300 opacity-50 transition hover:opacity-80 focus-visible:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 active:outline-offset-0" aria-label="pause carousel" x-on:click="(isPaused = !isPaused), setAutoplayInterval(autoplayIntervalTime)" :aria-pressed="isPaused">
+        <button type="button" class="absolute z-20 transition rounded-full opacity-50 bottom-5 right-5 text-slate-300 hover:opacity-80 focus-visible:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 active:outline-offset-0" aria-label="pause carousel" x-on:click="(isPaused = !isPaused), setAutoplayInterval(autoplayIntervalTime)" :aria-pressed="isPaused">
             <svg x-cloak x-show="isPaused" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="size-7">
                 <path fill-rule="evenodd" d="M2 10a8 8 0 1 1 16 0 8 8 0 0 1-16 0Zm6.39-2.908a.75.75 0 0 1 .766.027l3.5 2.25a.75.75 0 0 1 0 1.262l-3.5 2.25A.75.75 0 0 1 8 12.25v-4.5a.75.75 0 0 1 .39-.658Z" clip-rule="evenodd">
             </svg>
@@ -37,7 +37,7 @@
 
         <div class="absolute rounded-xl bottom-3 md:bottom-5 left-1/2 z-20 flex -translate-x-1/2 gap-4 md:gap-3 px-1.5 py-1 md:px-2" role="group" aria-label="slides">
             <template x-for="(slide, index) in slides" :key="index">
-                <button class="size-2 cursor-pointer rounded-full transition" x-on:click="(currentSlideIndex = index + 1), setAutoplayInterval(autoplayIntervalTime)" :class="[currentSlideIndex === index + 1 ? 'bg-slate-300' : 'bg-slate-300/50']" :aria-label="'slide ' + (index + 1)"></button>
+                <button class="transition rounded-full cursor-pointer size-2" x-on:click="(currentSlideIndex = index + 1), setAutoplayInterval(autoplayIntervalTime)" :class="[currentSlideIndex === index + 1 ? 'bg-slate-300' : 'bg-slate-300/50']" :aria-label="'slide ' + (index + 1)"></button>
             </template>
         </div>
     </div>
@@ -46,11 +46,11 @@
 
 
     <!-- About Start -->
-    <section class="my-20 py-5">
+    <section class="py-5 my-20">
         <div class="container px-lg-5">
             <div class="grid grid-cols-1 md:grid-cols-2 g-5">
-                <div class="ps-10 pt-6 flex flex-col justify-between gap-4 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class=" mb-4 pb-2">
+                <div class="flex flex-col justify-between gap-4 pt-6 ps-10 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="pb-2 mb-4 ">
                         <x-camelui::heading size="sm" class="mb-4">
                             حول الشركة
                         </x-camelui::heading>
@@ -88,14 +88,14 @@
 
 
     <!-- Vision Start -->
-    <section class="my-20 py-5">
+    <section class="py-5 my-20">
         <div class="container px-lg-5">
             <div class="grid grid-cols-1 md:grid-cols-2 g-5">
                 <div class="">
                     <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="/assets/images/undraw_visionary_technology.svg">
                 </div>
-                <div class="ps-10 pt-6 flex flex-col justify-center gap-4 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class=" mb-4 pb-2">
+                <div class="flex flex-col justify-center gap-4 pt-6 ps-10 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="pb-2 mb-4 ">
 {{--                        <x-camelui::heading size="sm" class="mb-4">--}}
 {{--                            حول الشركة--}}
 {{--                        </x-camelui::heading>--}}
@@ -105,7 +105,7 @@
 
                     </div>
                    <div>
-                       <x-camelui::paragraph class="  w-full">
+                       <x-camelui::paragraph class="w-full ">
                            أن نكون الرواد في مجال تقديم المنتجات والخدمات في مجال الأجهزة والمعدات الطبية ومستلزماتها وأيضا التوسع في السوق المحلي والإقليمي وفي عدة مجالات تجارية وأن تتماشى رؤيتنا مع رؤية المملكة 2030
                        </x-camelui::paragraph>
                    </div>
@@ -117,18 +117,23 @@
 
 
     <!-- Services Start -->
-    <section id="services" class="mb-8 py-6 relative bg-primary">
+    <section id="services" class="relative py-6 mb-8 bg-primary">
         <div class="container mx-auto">
-            <x-camelui::heading size="sm" class="text-center my-8">
+            <x-camelui::heading size="sm" class="my-8 text-center">
                 ماذا نقدم لك؟
             </x-camelui::heading>
-            <x-camelui::heading size="3xl" class="text-center my-8">
+            <x-camelui::heading size="3xl" class="my-8 text-center">
                 خدماتنا
             </x-camelui::heading>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4" data-aos="fade-up">
+            <div class="grid grid-cols-1 gap-4 md:grid-cols-3" data-aos="fade-up">
                 <div
+<<<<<<< HEAD
                     class="text-center bg-white dark:bg-gray-600 shadow-custom rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 hover:text-white group transition-all">
                     <div class="mx-auto w-24 h-24">
+=======
+                    class="flex flex-col items-center p-8 text-center transition-all bg-white rounded cursor-pointer dark:bg-gray-600 shadow-custom hover:bg-gray-200 hover:text-white group">
+                    <div class="w-24 h-24 mx-auto">
+>>>>>>> 1a509f692aa112a8f6429851e22c72ee4bd2c7db
 {{--                        <svg class="w-full h-full fill-primary group-hover:fill-primary-800" xmlns="http://www.w3.org/2000/svg"--}}
 {{--                             viewBox="0 0 512 512" xml:space="preserve">--}}
 {{--<g>--}}
@@ -192,8 +197,13 @@
                     </x-camelui::heading>
                 </div>
                 <div
+<<<<<<< HEAD
                     class="text-center bg-white dark:bg-gray-600 shadow-custom rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 hover:text-white group transition-all">
                     <div class="mx-auto w-24 h-24">
+=======
+                    class="flex flex-col items-center p-8 text-center transition-all bg-white cursor-pointer dark:bg-gray-600 shadow-custom hover:bg-gray-200 hover:text-white group">
+                    <div class="w-24 h-24 mx-auto">
+>>>>>>> 1a509f692aa112a8f6429851e22c72ee4bd2c7db
 {{--                        <svg class="w-full h-full fill-primary group-hover:fill-primary-800" xmlns="http://www.w3.org/2000/svg"--}}
 {{--                             viewBox="0 0 64 64">--}}
 {{--                            <g id="paint-painted-paint_roller-home-house" data-name="paint-painted-paint roller-home-house">--}}
@@ -248,8 +258,13 @@
                     </x-camelui::heading>
                 </div>
                 <div
+<<<<<<< HEAD
                     class="text-center bg-white dark:bg-gray-600 shadow-custom rounded-2xl cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 hover:text-white group transition-all">
                     <div class="mx-auto w-24 h-24">
+=======
+                    class="flex flex-col items-center p-8 text-center transition-all bg-white cursor-pointer dark:bg-gray-600 shadow-custom hover:bg-gray-200 hover:text-white group">
+                    <div class="w-24 h-24 mx-auto">
+>>>>>>> 1a509f692aa112a8f6429851e22c72ee4bd2c7db
 {{--                        <svg class="w-full h-full fill-primary group-hover:fill-primary-800" xmlns="http://www.w3.org/2000/svg"--}}
 {{--                             viewBox="0 0 74.34 74.34">--}}
 {{--                            <path d="M29.52,53.303h-8.945c-0.552,0-1,0.448-1,1v8.104c0,0.343,0.176,0.662,0.466,0.845l4.473,2.826--}}
@@ -341,8 +356,8 @@
                     </x-camelui::heading>
                 </div>
 {{--                <div--}}
-{{--                    class="text-center bg-white shadow-custom cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 hover:text-white group transition-all">--}}
-{{--                    <div class="mx-auto w-24 h-24">--}}
+{{--                    class="flex flex-col items-center p-8 text-center transition-all bg-white cursor-pointer shadow-custom hover:bg-gray-200 hover:text-white group">--}}
+{{--                    <div class="w-24 h-24 mx-auto">--}}
 
 {{--                        <svg class="w-full h-full fill-primary group-hover:fill-primary-800" viewBox="0 0 48 48"--}}
 {{--                             xmlns="http://www.w3.org/2000/svg">--}}
@@ -355,8 +370,8 @@
 {{--                    </x-camelui::heading>--}}
 {{--                </div>--}}
 {{--                <div--}}
-{{--                    class="text-center bg-white shadow-custom cursor-pointer p-8 flex flex-col items-center hover:bg-gray-200 hover:text-white group transition-all">--}}
-{{--                    <div class="mx-auto w-24 h-24">--}}
+{{--                    class="flex flex-col items-center p-8 text-center transition-all bg-white cursor-pointer shadow-custom hover:bg-gray-200 hover:text-white group">--}}
+{{--                    <div class="w-24 h-24 mx-auto">--}}
 
 {{--                        <svg class="w-full h-full fill-primary group-hover:fill-primary-800" viewBox="0 0 100 100"--}}
 {{--                             xml:space="preserve" xmlns="http://www.w3.org/2000/svg">--}}
